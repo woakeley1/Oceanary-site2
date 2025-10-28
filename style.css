@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Helvetica Neue", Arial, sans-serif;
   color: #fff;
@@ -230,4 +234,119 @@ how we work section */
 }
 
 
+
+
+/* Mission Divider Section */
+.mission-divider {
+  background-color:#003d5c; /* bright ocean blue  */
+  color: #fff;
+  padding: 2.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+
+/* Inner content wrapper */
+.mission-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1100px;
+  width: 100%;
+}
+
+/* Icon */
+.mission-icon img {
+  width: 120px;
+  height: auto;
+}
+
+/* Text */
+.mission-text h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 0;
+  color: #fff;
+}
+
+.mission-text p {
+  margin: 0.5rem 0 0;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Responsive (for smaller screens) */
+@media (max-width: 768px) {
+  .mission-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .mission-icon img {
+    width: 90px;
+  }
+
+  .mission-text h2 {
+    font-size: 1.5rem;
+  }
+}
+
+
+
+
+.section-social-cards {
+  background-color: #003049;
+  color: #F6F3E9;
+  text-align: center;
+  padding: 6rem 2rem;
+}
+
+.section-social-cards h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.section-social-cards p {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  opacity: 0.85;
+}
+
+.social-card-row {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.social-card {
+  background-color: rgba(246, 248, 255, 0.82);
+  color: #222222;
+  width: 180px;
+  height: 180px;
+  border-radius: 16px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.social-card i {
+  font-size: 2.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.social-card:hover {
+  transform: translateY(-6px);
+}
+
+.instagram i { color: #E1306C; }
+.tiktok i { color: #69C9D0; }
+.youtube i { color: #FF0000; }
 
