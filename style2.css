@@ -416,7 +416,7 @@ body {
   }
 } */
 @media screen and (max-width: 375px) {
-  .navbar li:nth-child(n+3) {
+  .navbar li:nth-child(n+2) {
     display: none; /* hides everything after the 2nd link */
   }
 
