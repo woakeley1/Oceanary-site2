@@ -401,7 +401,7 @@ body {
 /* =====================================
    iPhone SE & similar narrow portrait screens
 ===================================== */
-@media screen and (max-aspect-ratio: 3/4) {
+/* @media screen and (max-aspect-ratio: 3/4) {
   .navbar {
     padding: 0 0.5rem;
   }
@@ -413,5 +413,18 @@ body {
   }
   .navbar a {
     font-size: 0.9rem;
+  }
+} */
+@media screen and (max-width: 375px) {
+  .navbar li:nth-child(n+3) {
+    display: none; /* hides everything after the 2nd link */
+  }
+
+  .navbar ul {
+    gap: 1rem;
+  }
+
+  .logo img {
+    max-height: 50px;
   }
 }
