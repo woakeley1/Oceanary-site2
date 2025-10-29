@@ -422,6 +422,7 @@ body {
 
   .navbar {
     justify-content: center; /* centers logo */
+    display: none;
   }
 
   .logo img {
