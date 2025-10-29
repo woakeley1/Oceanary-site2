@@ -28,7 +28,7 @@
         <!-- <li><a href="#blog">Contact</a></li> -->
       </ul>
     </nav>
-    <button href="#contact" class="btn donate">Contact Us</button>
+    <button class="btn donate" id="contactBtn">Contact Us</button>
   </header>
 
     <!-- Hero Section -->
@@ -38,8 +38,8 @@
             <img src="OceanaryFinalLogo1.png" alt="Oceanary Logo">
        </div>
 
-      <p>One Mission. One Ocean.</p>
-      <button href="#involved" class="btn involved">Get Involved</button>
+      <p>One Mission. One Ocean. - Launching Soon</p>
+      <button id="involvedBtn" class="btn involved">Get Involved</button>
     </div>
   </section>
 
@@ -119,11 +119,20 @@
     <div class="mission-text">
       <h1>Get in Touch</h1>
       <p>Oceanary is launching soon. If you're a regenerative ocean venture, collaborator, or early believer—reach out. We’d love to hear from you.</p>
-      <h2><strong>Email:</strong> <a href="mailto:contact@oceanary.org">contact@oceanary.org</a></h2>
+      <h2><strong>Email:</strong> contact@oceanary.org</h2>
     </div>
   </div>
 </section>
 
+<script>
+  document.getElementById('contactBtn').addEventListener('click', function() {
+    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  document.getElementById('involvedBtn').addEventListener('click', function() {
+    document.getElementById('how-we-work').scrollIntoView({ behavior: 'smooth' });
+  });
+</script>
 
 </body>
 </html>
