@@ -122,7 +122,7 @@ body {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(0,0,0,0.2); 
+  background: rgba(0,0,0,0.1); 
   /* dark overlay for readability */
 }
 
@@ -160,7 +160,8 @@ body {
 how we work section */
 .how-we-work {
   /* background-color: #003049; */
-  background-color: #003d5c;
+  /* background-color: #003d5c; */
+  background: linear-gradient(135deg, #0077b6, #003049);
   padding: 4rem 2rem;
   
   text-align: center;
@@ -238,7 +239,8 @@ how we work section */
 
 /* Mission Divider Section */
 .mission-divider {
-  background-color:#003d5c; /* bright ocean blue  */
+  background: linear-gradient(135deg, #0077b6, #003049);
+  /* background-color:#003d5c;  */
   color: #fff;
   padding: 2.5rem 1rem;
   display: flex;
@@ -296,7 +298,8 @@ how we work section */
 
 
 .section-social-cards {
-  background-color: #003049;
+  height: 100vh;
+  background: url('boat.jpg') center/cover no-repeat;
   color: #F6F3E9;
   text-align: center;
   padding: 6rem 2rem;
