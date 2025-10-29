@@ -415,16 +415,17 @@ body {
     font-size: 0.9rem;
   }
 } */
-@media screen and (max-width: 375px) {
-  .navbar li:nth-child(n+2) {
-    display: none; /* hides everything after the 2nd link */
+@media screen and (max-width: 375px) and (orientation: portrait) {
+  .navbar ul {
+    display: none; /* hides nav links */
   }
 
-  .navbar ul {
-    gap: 1rem;
+  .navbar {
+    justify-content: center; /* centers logo */
   }
 
   .logo img {
     max-height: 50px;
   }
 }
+
