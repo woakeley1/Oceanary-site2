@@ -415,14 +415,15 @@ body {
     font-size: 0.9rem;
   }
 } */
-@media screen and (max-width: 375px) and (orientation: portrait) {
-  .navbar ul {
-    display: none; /* hides nav links */
-  }
 
+@media screen and (max-width: 480px) {
+  .navbar ul {
+    display: none !important;
+    visibility: hidden;
+  }
   .navbar {
     justify-content: center; /* centers logo */
-    display: none;
+    /* display: none; */
   }
 
   .logo img {
