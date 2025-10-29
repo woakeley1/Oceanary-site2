@@ -401,26 +401,17 @@ body {
 /* =====================================
    iPhone SE & similar narrow portrait screens
 ===================================== */
-@media screen and (max-width: 375px) and (orientation: portrait) {
+@media screen and (max-aspect-ratio: 3/4) {
   .navbar {
     padding: 0 0.5rem;
-    height: 60px;
   }
-
+  .navbar ul {
+    gap: 0.7rem;
+  }
   .logo img {
     max-height: 45px;
   }
-
-  .navbar ul {
-    gap: 0.6rem;
-  }
-
   .navbar a {
-    font-size: 0.85rem;
-  }
-
-  /* Optional: if it still doesn't fit, shrink font further */
-  .navbar a:nth-last-child(-n+1) {
-    display: none; /* hides the last nav link (e.g., "Donate") if needed */
+    font-size: 0.9rem;
   }
 }
