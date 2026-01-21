@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="articlepage.css" />
+<title>Oceanary</title>
+
+
+
+
+<!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">
+      <a href="index.html">
+        <img src="OceanaryFinalLogo1.png" alt="Oceanary Logo">
+      </a>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="#mission">Explore</a></li>
+        <li><a href="ventures.html">Ventures</a></li>
+        <li><a href="#media">Store</a></li>
+        <li><a href="#contact">Support</a></li>
+        <li><a href="#how-we-work">About</a></li>
+      </ul>
+    </nav>
+
+    <button class="btn donate" id="contactBtn">Contact Us</button>
+  </header>
+
+
+
+<body>
+
+
+<section class="article-page">
+
+
+<span class="article-category"></span>
+<h1 class="article-page-title"></h1>
+<div class="article-page-meta"></div>
+<img class="article-hero-image">
+
+<article class="article-body"></article>
+
+<img class="author-avatar">
+<div class="author-info">
+  <h4></h4>
+  <p></p>
+</div>
+
+</section>
+</main>
+
+</body>
+
+
+  <script>
+  // 1. Get the ID from the URL
+  const params = new URLSearchParams(window.location.search);
+  const articleId = params.get("id");
+
+  // 2. All your articles in one clean object
+  const articles = {
+    1: {
+      category: "Environment",
+      title: "Why Are Reefs Important?",
+      image: "puffin.jpg",
+      meta: "Dec 5th 2021 • 8 Min read",
+      content: [
+        "Coral reefs are among the most diverse ecosystems on Earth. They support thousands of marine species and protect coastlines from erosion.",
+        "Without reefs, ocean biodiversity would decline rapidly and coastal communities would become more vulnerable to storms.",
+        "Reefs also provide food, income, and tourism opportunities for millions of people around the world."
+      ],
+      author: {
+        name: "Will",
+        bio: "Marine biologist and environmental journalist focusing on ocean conservation.",
+        image: "author.jpg"
+      }
+    },
+
+    2: {
+      category: "Technology",
+      title: "The Technology Saving Our Oceans",
+      image: "puffin.jpg",
+      meta: "Dec 6th 2021 • 4 Min read",
+      content: [
+        "New technologies are revolutionising how we protect marine ecosystems.",
+        "AI systems can now detect coral bleaching and illegal fishing activities in real time.",
+        "From drones to smart nets, innovation is giving conservationists new tools."
+      ],
+      author: {
+        name: "Will",
+        bio: "Tech writer covering innovation in sustainability and environmental protection.",
+        image: "author.jpg"
+      }
+    },
+
+    3: {
+      category: "Environment",
+      title: "Importance Of Shark Week",
+      image: "puffin.jpg",
+      meta: "Dec 7th 2021 • 5 Min read",
+      content: [
+        "Shark Week has become a global platform for raising awareness about shark conservation.",
+        "Sharks play a vital role in maintaining the balance of marine ecosystems.",
+        "Education and media exposure are key to protecting these misunderstood creatures."
+      ],
+      author: {
+        name: "Will",
+        bio: "Ocean conservation advocate and wildlife photographer.",
+        image: "author.jpg"
+      }
+    },
+
+    4: {
+      category: "Ventures",
+      title: "Venture 1",
+      image: "puffin.jpg",
+      meta: "Dec 7th 2021 • 5 Min read",
+      content: [
+        "Shark Week has become a global platform for raising awareness about shark conservation.",
+        "Sharks play a vital role in maintaining the balance of marine ecosystems.",
+        "Education and media exposure are key to protecting these misunderstood creatures."
+      ],
+      author: {
+        name: "Will",
+        bio: "Ocean conservation advocate and wildlife photographer.",
+        image: "author.jpg"
+      }
+    }
+  };
+
+  // 3. Pick the correct article
+  const article = articles[articleId];
+
+  // 4. Safety check (in case someone types a bad ID)
+  if (!article) {
+    document.body.innerHTML = "<h1>Article not found</h1>";
+    throw new Error("Invalid article ID");
+  }
+
+  // 5. Fill the page
+  document.querySelector(".article-category").textContent = article.category;
+  document.querySelector(".article-page-title").textContent = article.title;
+  document.querySelector(".article-page-meta").textContent = article.meta;
+  document.querySelector(".article-hero-image").src = article.image;
+
+  // Build paragraphs
+  const body = document.querySelector(".article-body");
+  body.innerHTML = "";
+  article.content.forEach(text => {
+    const p = document.createElement("p");
+    p.textContent = text;
+    body.appendChild(p);
+  });
+
+  // Fill author card
+  document.querySelector(".author-avatar").src = article.author.image;
+  document.querySelector(".author-info h4").textContent = article.author.name;
+  document.querySelector(".author-info p").textContent = article.author.bio;
+</script>
+
+
+</html>

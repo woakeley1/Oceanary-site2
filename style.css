@@ -1,3 +1,6 @@
+/* =========================
+   GLOBAL RESET & BASE STYLES
+========================= */
 * {
   margin: 0;
   padding: 0;
@@ -11,30 +14,57 @@ html {
 body {
   font-family: "Helvetica Neue", Arial, sans-serif;
   color: #fff;
-  background-color: #000;
+  background: linear-gradient(205deg, #0077b6, #003049);
+  overflow-x: hidden;
 }
 
-/* Navbar */
+/* =========================
+   NAVBAR
+========================= */
 .navbar {
-  position: fixed;
-  top: 0;
+  position: relative;
   width: 100%;
-  height: 70px;              /* lock navbar height */
+  height: 70px;
   padding: 0 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: transparent;
+  background-color: transparent;
   z-index: 1000;
+  transition: 
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.35s ease,
+    opacity 0.25s ease;
+}
+
+/* Sticky state */
+.navbar.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  /* backdrop-filter: blur(8px);
+  box-shadow: 0 6px 25px rgba(0,0,0,0.6); */
+  transform: translateY(-10px);
+  opacity: 0;
+}
+
+/* After sticky is applied, we animate it in */
+.navbar.sticky.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+body.navbar-active {
+  padding-top: 70px;
 }
 
 .logo img {
-  max-height: 120px;          /* keeps logo inside navbar */
-  width: auto;               /* preserve proportions */
+  max-height: 55px; /* fits cleanly inside 70px navbar */
+  width: auto;
   display: block;
 }
-
-
 
 .navbar ul {
   list-style: none;
@@ -53,9 +83,9 @@ body {
   color: #4da6ff;
 }
 
-/*  */
-
-
+/* =========================
+   BUTTONS
+========================= */
 .btn {
   background: linear-gradient(135deg, #0077b6, #003049);
   color: white;
@@ -92,23 +122,363 @@ body {
 }
 
 .btn.involved {
-  margin-top: 2rem; /* or whatever spacing feels right */
+  margin-top: 2rem;
 }
 
-
 .btn.donate {
-  padding: 0.6rem 1.5rem;  /* smaller height and width */
+  padding: 0.6rem 1.5rem;
   font-size: 1rem;
 }
 
+/* =========================
+   RESPONSIVE FIXES (iPhone SE & below)
+========================= */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0 1rem;
+    height: 60px;
+  }
+
+  .navbar ul {
+    gap: 1rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .navbar ul {
+    display: none !important;
+    visibility: hidden;
+  }
+  .navbar {
+    justify-content: center; /* centers logo */
+    /* display: none; */
+  }
+
+  .logo img {
+    max-height: 50px;
+  }
+}
+
+/* Container for the whole module */
+.oceanary-news {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* Breaking News Banner */
+.breaking-banner {
+  grid-column: 1 / -1;
+  background: linear-gradient(90deg, #00b4d8, #0077b6);
+  color: #fff;
+  padding: 1rem 2rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+  animation: pulse 2s infinite;
+  border-radius: 8px;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.85; }
+  100% { opacity: 1; }
+}
+
+/* Featured Articles Grid */
+.featured-articles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Article Card Base */
+.article-card {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  height: 320px;
+  transition: transform 0.3s ease;
+  color: #fff;
+}
+
+.article-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Wide article */
+.article-card.wide {
+  grid-column: 1 / -1;
+  height: 380px;
+}
+
+/* Image */
+.article-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.article-card:hover .article-image {
+  transform: scale(1.05);
+}
+
+/* Dark overlay */
+.article-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85) 25%,
+    rgba(0, 0, 0, 0.4) 55%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  z-index: 1;
+}
+
+/* Text on top of image */
+.article-content {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  z-index: 2;
+}
+
+.article-meta {
+  font-size: 0.8rem;
+  opacity: 0.85;
+  margin-bottom: 0.3rem;
+}
+
+.article-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.article-description {
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.category {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.trending-news {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-self: stretch;
+  height: 100%;
+}
+
+.trending-news h3 {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+/* Bigger, more dominant cards */
+.trending-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 1rem;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.8rem;
+  border-radius: 12px;
+  min-height: 140px;
+  overflow: hidden;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.trending-item:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Image now fills more space */
+.trending-thumb {
+  width: 100%;
+  height: 100%;
+  max-height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Trend number badge */
+.trend-number {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  background: linear-gradient(135deg, #00b4d8, #0077b6);
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.85rem;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+.trending-info {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  font-weight: 500;
+}
+.trending-meta {
+  font-size: 0.8rem;
+  opacity: 0.85;
+  margin-bottom: 0.3rem;
+}
+
+.oceanary-news {
+  align-items: stretch;
+}
+
+.featured-articles,
+.trending-news {
+  height: 100%;
+}
+/* ================= QUICK READ SECTION ================= */
+
+.quick-read {
+  background: #0d5896;
+  /* padding: 4rem 0; */
+}
+
+.quick-read h2 {
+  text-align: center;
+  padding: 1rem 0 2.5rem;
+  color: #fff;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+/* ================= SWIPER ================= */
+
+.quick-read-swiper {
+  position: relative;
+  padding: 2rem 0;
+}
+
+/* 3 cards visible at once + no gaps */
+.swiper-slide {
+  width: calc(100% / 3);   /* force exactly 3 cards in view */
+  margin: 0 !important;   /* remove any spacing */
+}
+
+/* ================= ARTICLE CARD ================= */
+
+.article {
+  display: flex;
+  flex-direction: column;
+  height: 650px;                 /* MUCH taller cards */
+  background: #0b3f6b;
+  overflow: hidden;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 0;              /* flush edges, no gaps */
+  transition: transform 0.25s ease;
+}
+
+.article:hover {
+  transform: translateY(-6px);
+}
+
+/* ================= IMAGE ================= */
+
+.article-image {
+  width: 100%;
+  height: 70%;                   /* bigger image area */
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.article:hover .article-image {
+  transform: scale(1.05);
+}
+
+/* No overlay needed anymore */
+.article-overlay {
+  display: none;
+}
+
+/* ================= TEXT AREA ================= */
+
+.article-data-container {
+  height: 30%;
+  padding: 1.5rem;
+  background: #072f52;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Date + read time */
+.article-data {
+  display: flex;
+  align-items: center;
+  font-size: 0.75rem;
+  opacity: 0.8;
+  margin-bottom: 0.5rem;
+}
+
+.article-data-spacer {
+  width: 4px;
+  height: 4px;
+  background: #fff;
+  border-radius: 50%;
+  margin: 0 0.5rem;
+}
+
+/* Title */
+.article-title {
+  margin: 0;
+  font-size: 1.4rem;
+  line-height: 1.35;
+  font-weight: 600;
+  text-align: left;
+}
+
+/* ================= SWIPER CONTROLS ================= */
+
+.swiper-controls {
+  color: #fdfdfd;
+  background: rgba(0, 0, 0, 0.65);
+  width: 46px;
+  height: 46px;
+  border-radius: 4px;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 18px;
+}
 
 
 
 
-/* Hero Section */
+/* =========================
+   HERO SECTION
+========================= */
 .hero {
-  height: 100vh;
-  background: url('puffin.jpg') center/cover no-repeat;
+  min-height: 100svh; /* iOS-safe viewport height */
+  background: url('coral\ test.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -122,8 +492,7 @@ body {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(0,0,0,0.1); 
-  /* dark overlay for readability */
+  background: rgba(0,0,0,0.1);
 }
 
 .hero-content {
@@ -132,87 +501,35 @@ body {
   max-width: 700px;
 }
 
-
 .hero p {
-  font-size: 2rem;
+  font-size: clamp(1rem, 2vw, 2rem);
   line-height: 1.6;
-
   font-weight: 400;
   opacity: 0.85;
-  margin-top: -10rem;
+  margin-top: 0rem;
 }
-
 
 .hero-logo img {
-  max-width: 800px;   /* adjust to taste */
+  max-width: 500px;
   width: 100%;
   height: auto;
-  margin: 0 auto 0.2rem auto;
+  margin: 0 auto 0.5rem auto;
   display: block;
-  margin-top: -6rem;
-  /* margin-bottom: 0.5rem; tighten space below logo */
-
+  margin-top: 0rem;
 }
 
 
 
-/* 
-how we work section */
-.how-we-work {
-  /* background-color: #003049; */
-  /* background-color: #003d5c; */
-  background: linear-gradient(135deg, #0077b6, #003049);
-  padding: 4rem 2rem;
-  
-  text-align: center;
-}
-
-.how-we-work h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: whitesmoke;
-}
-
-
-.work-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-.color-card {
-  background-color: rgba(0, 0, 0, 0.6); /* semi-transparent overlay */
-  padding: 2rem;
-  border-radius: 12px;
-  max-width: 320px;
-  color: white;
-  transition: transform 0.3s ease;
-}
-
-.color-card:hover {
-  transform: translateY(-5px);
-}
-
-
-
-/* Custom colors */
-.card-collab { background-color: #0077b6; }
-.card-media { background-color: #00b4d8; }
-.card-network { background-color: #90e0ef; color: #003049; }
-
-
+/* Shop Section */
 .section2.about {
-  
-  height: 100vh;
-  background: url('waterturtle.jpg') center/cover no-repeat;
-  color: #F6F3E9; /* soft white for contrast */
+  min-height: 100svh;
+  background: url('storecard.PNG') center/cover no-repeat;
+  color: #eeeef1;
   padding: 8rem 4rem;
   text-align: left;
-  background-color: rgba(0, 0, 0, 0.6); /* semi-transparent overlay */
-  margin: 0 auto;
+  
 }
+
 
 .section2-different {
   font-size: 3.5rem;
@@ -233,123 +550,3 @@ how we work section */
   max-width: 700px;
   opacity: 0.85;
 }
-
-
-
-
-/* Mission Divider Section */
-.mission-divider {
-  background: linear-gradient(135deg, #0077b6, #003049);
-  /* background-color:#003d5c;  */
-  color: #fff;
-  padding: 2.5rem 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: left;
-}
-
-/* Inner content wrapper */
-.mission-content {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  max-width: 1100px;
-  width: 100%;
-}
-
-/* Icon */
-.mission-icon img {
-  width: 120px;
-  height: auto;
-}
-
-/* Text */
-.mission-text h2 {
-  font-size: 1.8rem;
-  font-weight: 800;
-  margin: 0;
-  color: #fff;
-}
-
-.mission-text p {
-  margin: 0.5rem 0 0;
-  font-size: 1rem;
-  opacity: 0.9;
-}
-
-/* Responsive (for smaller screens) */
-@media (max-width: 768px) {
-  .mission-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .mission-icon img {
-    width: 90px;
-  }
-
-  .mission-text h2 {
-    font-size: 1.5rem;
-  }
-}
-
-
-
-
-.section-social-cards {
-  height: 100vh;
-  background: url('boat.jpg') center/cover no-repeat;
-  color: #F6F3E9;
-  text-align: center;
-  padding: 6rem 2rem;
-}
-
-.section-social-cards h2 {
-  font-size: 2.8rem;
-  margin-bottom: 1rem;
-}
-
-.section-social-cards p {
-  font-size: 1.2rem;
-  margin-bottom: 3rem;
-  opacity: 0.85;
-}
-
-.social-card-row {
-  display: flex;
-  justify-content: center;
-  gap: 2.5rem;
-  flex-wrap: wrap;
-}
-
-.social-card {
-  background-color: rgba(246, 248, 255, 0.82);
-  color: #222222;
-  width: 180px;
-  height: 180px;
-  border-radius: 16px;
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-weight: 600;
-  font-size: 1.1rem;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease;
-}
-
-.social-card i {
-  font-size: 2.8rem;
-  margin-bottom: 0.8rem;
-}
-
-.social-card:hover {
-  transform: translateY(-6px);
-}
-
-.instagram i { color: #E1306C; }
-.tiktok i { color: #69C9D0; }
-.youtube i { color: #FF0000; }
-

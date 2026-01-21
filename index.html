@@ -2,137 +2,295 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
   <title>Oceanary</title>
-  <link rel="stylesheet" href="style2.css" />
+  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
-<body class="locked">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
-  <!-- Navbar -->
+<!-- Navbar -->
   <header class="navbar">
-      <div class="logo">
-        <a href="#hero">
-            <img src="OceanaryFinalLogo1.png" alt="Oceanary Logo">
-        </a>
-       </div>
-
+    <div class="logo">
+      <a href="#hero">
+        <img src="OceanaryFinalLogo1.png" alt="Oceanary Logo">
+      </a>
+    </div>
 
     <nav>
       <ul>
-        <li><a href="#mission">Our Mission</a></li>
-        <li><a href="#how-we-work">How we work</a></li>
-        <li><a href="#media">Media</a></li>
-        <li><a href="#contact">Get Involved</a></li>
-        <!-- <li><a href="#blog">Contact</a></li> -->
+        <li><a href="#mission">Explore</a></li>
+        <li><a href="ventures.html">Ventures</a></li>
+        <li><a href="#media">Store</a></li>
+        <li><a href="#contact">Support</a></li>
+        <li><a href="#how-we-work">About</a></li>
       </ul>
     </nav>
+
     <button class="btn donate" id="contactBtn">Contact Us</button>
   </header>
 
-    <!-- Hero Section -->
-  <section id="hero" class="hero" >
+
+<section id="hero" class="hero" >
     <div class="hero-content">
        <div class="hero-logo">
             <img src="OceanaryFinalLogo1.png" alt="Oceanary Logo">
        </div>
 
-      <p>One Mission. One Ocean. - Launching Soon</p>
+      <p>See The Ocean Differently</p>
       <button id="involvedBtn" class="btn involved">Get Involved</button>
     </div>
-  </section>
+</section>
 
 
-<section id="how-we-work" class="how-we-work fade-up">
-  <h2>How We Work</h2>
- <div class="work-grid">
   
-  <div class="color-card card-collab">
-    <h3>We Collaborate</h3>
-    <p>Ventures reach out. We co-write their story with care—capturing mission, emotion, and impact.</p>
+<section class="oceanary-news">
+
+
+
+  <!-- Featured Articles -->
+  <div class="featured-articles">
+  <!-- Breaking News Banner -->
+  <div class="breaking-banner">
+    Latest Ocean Stories:
   </div>
-  <div class="color-card card-media">
-    <h3>We Feature</h3>
-    <p>Stories are published across our Media page, Instagram, and YouTube—building visibility and resonance.</p>
+    <!-- Article 1 -->
+    <a href="article1.html?id=1" class="article-card">
+      <img src="reef.jpg" alt="VR headset" class="article-image">
+      <div class="article-content">
+        <div class="article-meta">
+          <span class="category">Environment</span> • Dec 5th 2021 • 8 Min read
+        </div>
+        <h3 class="article-title">Why are reefs important?</h3>
+      </div>
+    </a>
+
+    <!-- Article 2 -->
+    <a href="article1.html?id=2" class="article-card">
+      <img src="puffin.jpg" alt="Fine dining table" class="article-image">
+      <div class="article-content">
+        <div class="article-meta">
+          <span class="category">Tecnology</span> • Dec 6th 2021 • 4 Min read
+        </div>
+        <h3 class="article-title">The Tecnology Saving Our Oceans.</h3>
+      </div>
+    </a>
+
+ <!-- Article 3 (Wide Health Article) -->
+ <a href="article1.html?id=3" class="article-card wide">
+  <img src="shark.png" alt="Health supplements" class="article-image">
+  <div class="article-content">
+    <div class="article-meta">
+      <span class="category">Environment</span> • Dec 7th 2021 • 5 Min read
+    </div>
+    <h3 class="article-title">Importance Of Shark Week</h3>
+    <p class="article-description">
+      Explore the importance of sharkweek in raising awerness for our oceans..
+    </p>
   </div>
-  <div class="color-card card-network">
-    <h3>We Invite</h3>
-    <p>Featured ventures receive Oceanary’s badge and join our trust-first network of collaborators and funders.</p>
+</a>
+
+
+  </div>
+
+<div class="trending-news">
+  <h3>Trending News</h3>
+
+  <div class="trending-item">
+    <span class="trend-number">1</span>
+    <img src="puffin.jpg" class="trending-thumb">
+    
+    <div class="trending-info">Shark populations hit new lows</div>
+  </div>
+
+  <div class="trending-item">
+    <span class="trend-number">2</span>
+    <img src="puffin.jpg" class="trending-thumb">
+    <div class="trending-info">AI maps coral bleaching</div>
+  </div>
+
+  <div class="trending-item">
+    <span class="trend-number">3</span>
+    <img src="puffin.jpg" class="trending-thumb">
+    <div class="trending-info">Plastic clean-up tech goes viral</div>
+  </div>
+
+  <div class="trending-item">
+    <span class="trend-number">4</span>
+    <img src="puffin.jpg" class="trending-thumb">
+    <div class="trending-info">Rare whale sighting recorded</div>
+  </div>
+
+  <div class="trending-item">
+    <span class="trend-number">5</span>
+    <img src="puffin.jpg" class="trending-thumb">
+    <div class="trending-info">Deep sea discoveries in 2026</div>
   </div>
 </div>
 
 </section>
 
 
+
+<!-- Quick read -->
+    <section class="quick-read section">
+
+        <div class="container">
+
+            <!-- <h2 class="title section-title" data-name="Quick read">Quick read</h2> -->
+            <!-- Slider main container -->
+            <div class="swiper quick-read-swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <a href="#" class="article swiper-slide">
+                        <img src="puffin.jpg" alt="" class="article-image">
+
+                        <div class="article-data-container">
+                            <div class="article-data">
+                                <span>23 Dec 2021</span>
+                                <span class="article-data-spacer"></span>
+                                <span>3 Min read</span>
+                            </div>
+                            <h3 class="title article-title">Sample article title</h3>
+                        </div>
+                    </a>
+                    <!-- Slides -->
+                    <a href="#" class="article swiper-slide">
+                        <img src="puffin.jpg" alt="" class="article-image">
+
+                        <div class="article-data-container">
+                            <div class="article-data">
+                                <span>23 Dec 2021</span>
+                                <span class="article-data-spacer"></span>
+                                <span>3 Min read</span>
+                            </div>
+                            <h3 class="title article-title">Sample article title</h3>
+                        </div>
+                    </a>
+                    <!-- Slides -->
+                    <a href="#" class="article swiper-slide">
+                        <img src="puffin.jpg" alt="" class="article-image">
+
+                        <div class="article-data-container">
+                            <div class="article-data">
+                                <span>23 Dec 2021</span>
+                                <span class="article-data-spacer"></span>
+                                <span>3 Min read</span>
+                            </div>
+                            <h3 class="title article-title">Sample article title</h3>
+                        </div>
+                    </a>
+                    <!-- Slides -->
+                    <a href="#" class="article swiper-slide">
+                        <img src="puffin.jpg" alt="" class="article-image">
+
+                        <div class="article-data-container">
+                            <div class="article-data">
+                                <span>23 Dec 2021</span>
+                                <span class="article-data-spacer"></span>
+                                <span>3 Min read</span>
+                            </div>
+                            <h3 class="title article-title">Sample article title</h3>
+                        </div>
+                    </a>
+                    <!-- Slides -->
+                    <a href="#" class="article swiper-slide">
+                        <img src="puffin.jpg" alt="" class="article-image">
+
+                        <div class="article-data-container">
+                            <div class="article-data">
+                                <span>23 Dec 2021</span>
+                                <span class="article-data-spacer"></span>
+                                <span>3 Min read</span>
+                            </div>
+                            <h3 class="title article-title">Sample article title</h3>
+                        </div>
+                    </a>
+                    <!-- Slides -->
+                    <a href="#" class="article swiper-slide">
+                        <img src="puffin.jpg" alt="" class="article-image">
+
+                        <div class="article-data-container">
+                            <div class="article-data">
+                                <span>23 Dec 2021</span>
+                                <span class="article-data-spacer"></span>
+                                <span>3 Min read</span>
+                            </div>
+                            <h3 class="title article-title">Sample article title</h3>
+                        </div>
+                    </a>
+                </div>
+                <!-- Navigation buttons -->
+                <div class="swiper-button-prev swiper-controls"></div>
+                <div class="swiper-button-next swiper-controls"></div>
+                
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
 <!-- Differentiator Section -->
 <section id="mission" class="section2 about" >
- <h2 class="section2-different fade-up">Our Mission.</h2>
-  <h3 class="section2-h3 fade-up" >A global network of ocean credibility.</h3>
+ <h2 class="section2-different fade-up">Oceanary Store<h2>
+  <h3 class="section2-h3 fade-up" >Help fund Ocean Projects Today.</h3>
   <p class="section-aboutintro fade-up">
-    We’re building the world’s first network of verified ocean ventures—each one visible, fundable, and ready to collaborate. Our badge will be a globally recognized symbol of regenerative impact. 
+    View a wide range of our products and our partner products to help fund ocean conservation efforts. 
   </p>
-  <p class="section-aboutintro fade-up" ><strong>Join us in shaping the standard. </strong> </p>
+  <p class="section-aboutintro fade-up" ><strong>| Explore Our Range | </strong> </p>
 
 
-</section>
-
-
-
-
-<section class="mission-divider">
-  <div class="mission-content">
-    <div class="mission-icon">
-      <img src="OfficialBadge.png" alt="Oceanary Badge Icon">
-    </div>
-    <div class="mission-text fade-up">
-      <h2>The Oceanary Badge</h2>
-      <p>Each badge we issue is a signal of belief—earned through story, sincerity, and visible impact. It makes ventures discoverable, fundable, and emotionally credible across our platform and media campaigns.</p>
-    </div>
-  </div>
-</section>
-
-
-<section id="media" class="section-social-cards">
-  <h2>Follow Oceanary Media</h2>
-  <p>Trust-first storytelling across every platform.</p>
-
-  <div class="social-card-row">
-    <a href="https://instagram.com/oceanaryofficial" target="_blank" class="social-card instagram">
-      <i class="fab fa-instagram"></i>
-      <span>Instagram</span>
-    </a>
-    <a href="https://tiktok.com/@oceanaryofficial" target="_blank" class="social-card tiktok">
-      <i class="fab fa-tiktok"></i>
-      <span>TikTok</span>
-    </a>
-    <a href="https://youtube.com/@oceanaryofficial" target="_blank" class="social-card youtube">
-      <i class="fab fa-youtube"></i>
-      <span>YouTube</span>
-    </a>
-  </div>
-</section>
-
-
-<section id="contact" class="mission-divider fade-up">
-  <div class="mission-content">
-    <div class="mission-text">
-      <h1>Get in Touch</h1>
-      <p>Oceanary is launching soon. If you're a regenerative ocean venture, collaborator, or early believer—reach out. We’d love to hear from you.</p>
-      <h2><strong>Email:</strong> contact@oceanary.org</h2>
-    </div>
-  </div>
 </section>
 
 <script>
-  document.getElementById('contactBtn').addEventListener('click', function() {
-    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-  });
-
-  document.getElementById('involvedBtn').addEventListener('click', function() {
-    document.getElementById('how-we-work').scrollIntoView({ behavior: 'smooth' });
+  const swiper = new Swiper(".quick-read-swiper", {
+    slidesPerView: 1.2,
+    spaceBetween: 20,
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 2.2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+    },
   });
 </script>
 
-</body>
+<script>
+  const navbar = document.querySelector(".navbar");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 80) {
+      if (!navbar.classList.contains("sticky")) {
+        navbar.classList.add("sticky");
+        document.body.classList.add("navbar-active");
+
+        // trigger animation frame
+        requestAnimationFrame(() => {
+          navbar.classList.add("show");
+        });
+      }
+    } else {
+      navbar.classList.remove("show");
+      navbar.classList.remove("sticky");
+      document.body.classList.remove("navbar-active");
+    }
+  });
+</script>
+
+
 </html>
