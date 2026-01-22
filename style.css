@@ -659,3 +659,86 @@ body.navbar-active {
   max-width: 180px;
   text-align: center;
 }
+
+
+/* About teaser section */
+
+.about-teaser {
+  padding: clamp(2rem, 8vw, 3rem) 0;
+  background: radial-gradient(circle at 30% 20%, rgba(23, 137, 194, 0.486), rgba(4, 40, 77, 0.842));
+  color: #fff;
+}
+
+.about-teaser__eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: clamp(3rem, 1vw, 1.2rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 3rem;
+}
+
+.eyebrow-line {
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.eyebrow-text {
+  white-space: nowrap;
+}
+
+.about-teaser__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(2rem, 4vw, 6rem);
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 4vw, 3rem);
+  flex-wrap: wrap;
+}
+
+.about-teaser__logo img {
+  width: clamp(120px, 18vw, 220px);
+  height: auto;
+  opacity: 0.95;
+  flex-shrink: 0;
+}
+
+.about-teaser__text {
+  flex: 1;
+  max-width: 650px;
+  font-size: clamp(1rem, 1.4vw, 1.4rem);
+  line-height: 1.75;
+  opacity: 0.85;
+}
+
+.about-teaser__link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-size: clamp(0.9rem, 1vw, 1.1rem);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 0.1rem;
+}
+
+/* Pillars */
+.about-teaser__pillars {
+  font-size: clamp(0.8rem, 1vw, 1rem);
+  opacity: 0.8;
+  margin-top: 1rem;
+}
+
+.about-teaser__pillars-label {
+  font-weight: 500;
+  margin-right: 0.5rem;
+}
+
+.about-teaser__pillars-item,
+.about-teaser__pillars-separator {
+  margin-right: 0.35rem;
+}
