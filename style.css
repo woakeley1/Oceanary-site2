@@ -173,9 +173,12 @@ body.navbar-active {
   color: #fff;
   padding: 1rem 2rem;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2.5vw, 2rem);
+  line-height: 1.2;
   animation: pulse 2s infinite;
   border-radius: 8px;
+  display: flex;
+  align-items: center;
 }
 
 @keyframes pulse {
