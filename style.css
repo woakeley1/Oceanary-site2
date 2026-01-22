@@ -378,9 +378,7 @@ body.navbar-active {
 }
 /* ================= QUICK READ SECTION ================= */
 
-.quick-read {
-  background: #0d5896;
-}
+
 
 .quick-read h2 {
   text-align: center;
@@ -389,6 +387,29 @@ body.navbar-active {
   font-size: 2.2rem;
   font-weight: 700;
 }
+
+.quick-read__eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  font-size: clamp(3rem, 1vw, 1.2rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 3rem;
+}
+
+.quickeyebrow-line {
+  flex: 1;
+  height: 1px;
+  background: rgb(255, 254, 254);
+}
+
+.quickeyebrow-text {
+  white-space: nowrap;
+}
+
 
 /* ================= CUSTOM SWIPER ================= */
 
