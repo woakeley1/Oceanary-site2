@@ -350,4 +350,25 @@ window.addEventListener("resize", updateSwiper);
 </script>
 
 
+<script>
+  const navbar = document.querySelector(".navbar");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 80) {
+      if (!navbar.classList.contains("sticky")) {
+        navbar.classList.add("sticky");
+        document.body.classList.add("navbar-active");
+
+        // trigger animation frame
+        requestAnimationFrame(() => {
+          navbar.classList.add("show");
+        });
+      }
+    } else {
+      navbar.classList.remove("show");
+      navbar.classList.remove("sticky");
+      document.body.classList.remove("navbar-active");
+    }
+  });
+</script>
 </html>
