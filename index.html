@@ -13,28 +13,31 @@
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> -->
 </head>
 
+<header class="navbar">
+  <div class="logo">
+    <a href="#hero">
+      <img src="OceanaryFinalLogo1.png" alt="Oceanary Logo">
+    </a>
+  </div>
 
-<!-- Navbar -->
-  <header class="navbar">
-    <div class="logo">
-      <a href="#hero">
-        <img src="OceanaryFinalLogo1.png" alt="Oceanary Logo">
-      </a>
-    </div>
+  <!-- Hamburger button -->
+  <button class="hamburger" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#featured-articles">Explore</a></li>
-        
-        <li><a href="#mission">Store</a></li>
-        <li><a href="#contact">Support</a></li>
-        <li><a href="#who-we-are">About</a></li>
-      </ul>
-    </nav>
-
-    <!-- <button class="btn donate" id="contactBtn">Contact Us</button> -->
-  </header>
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#featured-articles">Explore</a></li>
+      <li><a href="#mission">Store</a></li>
+      <li><a href="#contact">Support</a></li>
+      <li><a href="#who-we-are">About</a></li>
+    </ul>
+  </nav>
+</header>
+>
 
 
 <section id="hero" class="hero" >
@@ -416,4 +419,14 @@ window.addEventListener("resize", updateSwiper);
 
 </script>
 
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const nav = document.querySelector('.navbar nav');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    nav.classList.toggle('open');
+  });
+
+</script>
 </html>
