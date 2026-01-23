@@ -621,37 +621,34 @@ body.navbar-active {
   z-index: 0;
 }
 
-
 @media (max-width: 768px) {
   .hero {
-    height: 100dvh;
-    min-height: 100dvh;
-    padding: 0 1.5rem;
-    margin: 0;
+    height: 70vh;        /* shorter hero on mobile */
+    min-height: 70vh;
 
     background-image: url("coral test.jpg");
-    background-position: center 30%;
     background-size: cover;
     background-repeat: no-repeat;
 
-    overflow: hidden; /* stops any bleed causing gaps */
+    /* Show more of the left side */
+    background-position: 35% center;
+
+    overflow: hidden;
   }
 
   .hero-content {
-    margin: 0;
-    padding-top: 3rem;
-  }
-
-  .hero p {
-    margin: 0.5rem 0 0 0; /* remove default margins */
-    font-size: 1rem;
+    padding-top: 2.5rem;
   }
 
   .hero-logo img {
-    max-width: 260px;
+    max-width: 240px;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    margin-top: 0.5rem;
   }
 }
-
 
 .hero::after {
   content: "";
