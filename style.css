@@ -85,6 +85,21 @@ body.navbar-active {
   color: #4da6ff;
 }
 
+@media (max-width: 500px) {
+  .navbar {
+    transform: scale(1.08);
+    transform-origin: top center;
+  }
+}
+@media (max-width: 500px) {
+  .navbar {
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+  }
+}
+
+
+
 /* =========================
    BUTTONS
 ========================= */
