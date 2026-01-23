@@ -497,12 +497,11 @@ body.navbar-active {
   transition: transform 0.4s ease;
 }
 
-/* 3 cards visible */
 .article {
   flex: 0 0 calc(100% / 3);
   display: flex;
   flex-direction: column;
-  /* height: 650px; */
+  height: 420px;              /* lock card height */
   background: #0b3f6b;
   overflow: hidden;
   text-decoration: none;
@@ -517,14 +516,16 @@ body.navbar-active {
 
 /* ================= IMAGE ================= */
 
+
 .quick-image {
   width: 100%;
-  height: 220px;
+  height: 200px;              /* lock image height */
   object-fit: cover;
+  object-position: center;
+  flex-shrink: 0;             /* fixes iPhone gaps */
   display: block;
   transition: transform 0.5s ease;
 }
-
 .article:hover .quick-image {
   transform: scale(1.05);
 }
@@ -532,6 +533,7 @@ body.navbar-active {
 /* ================= TEXT AREA ================= */
 
 .article-data-container {
+  flex: 1;                    /* fills remaining space */
   padding: 1rem;
   background: #072f52;
   display: flex;
@@ -595,6 +597,25 @@ body.navbar-active {
 }
 
 
+/* Tablet */
+@media (max-width: 900px) {
+  .article {
+    flex: 0 0 50%;   /* 2 cards */
+  }
+}
+
+/* Mobile portrait */
+@media (max-width: 600px) {
+  .article {
+    flex: 0 0 100%;  /* 1 card */
+  }
+
+  .swiper-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+}
 
 
 
