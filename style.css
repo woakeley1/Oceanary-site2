@@ -619,21 +619,35 @@ body.navbar-active {
   padding: 0 2rem;
   position: relative;
   z-index: 0;
-  padding-bottom: 1px; /* stops margin collapse */
+  padding-bottom: 1px;
 }
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100dvh;
+    height: auto;
 
-@media (max-width: 600px) {
+    /* Rewrite how the background behaves on phones */
+    background-position: center center;
+    background-size: cover;   /* change to 'contain' if you want no cropping */
+    background-repeat: no-repeat;
+
+    background-color: #000; /* fallback */
+  }
+
+  .hero::after {
+    background: rgba(0, 0, 0, 0.25);
+  }
+
   .hero-content {
-    transform: translateY(-10%);
+    padding-top: 4rem;
   }
 
   .hero-logo img {
-    max-width: 350px;
+    max-width: 280px;
   }
 
   .hero p {
     font-size: 1rem;
-    margin-top: 0.5rem;
   }
 }
 
