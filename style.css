@@ -605,9 +605,10 @@ body.navbar-active {
    HERO SECTION
 ========================= */
 .hero {
-  min-height: 100dvh;
+  min-height: 100vh;
+  height: 100svh;
   background-image: url("coral test.jpg");
-  background-position: center center;
+  background-position: center top;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -618,6 +619,7 @@ body.navbar-active {
   padding: 0 2rem;
   position: relative;
   z-index: 0;
+  padding-bottom: 0.1px; /* prevents margin collapse */
 }
 
 .hero::after {
@@ -628,7 +630,6 @@ body.navbar-active {
   z-index: 1;
   pointer-events: none;
 }
-
 
 .hero-content {
   position: relative;
@@ -650,7 +651,6 @@ body.navbar-active {
   height: auto;
   margin: 0 auto 0.5rem auto;
   display: block;
-  margin-top: 0rem;
 }
 
 
