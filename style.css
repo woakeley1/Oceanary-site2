@@ -605,23 +605,30 @@ body.navbar-active {
    HERO SECTION
 ========================= */
 .hero {
-  min-height: 100svh; /* iOS-safe viewport height */
-  background: url('coral\ test.jpg') center/cover no-repeat;
+  min-height: 100dvh;
+  background-image: url("coral test.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: 0 2rem;
   position: relative;
+  z-index: 0;
 }
 
 .hero::after {
   content: "";
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  inset: 0;
   background: rgba(0,0,0,0.1);
+  z-index: 1;
+  pointer-events: none;
 }
+
 
 .hero-content {
   position: relative;
