@@ -660,6 +660,16 @@ body.navbar-active {
   text-align: center;
 }
 
+@media (max-width: 600px) {
+  .hero,
+  .section2.about {
+    background-size: 180%; /* zooms in slightly */
+    background-position: center top;
+  }
+}
+
+
+
 /* About teaser section */
 
 .about-teaser {
