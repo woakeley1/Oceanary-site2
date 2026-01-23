@@ -86,17 +86,33 @@ body.navbar-active {
 }
 
 @media (max-width: 500px) {
+
+  /* Slight global scale */
   .navbar {
     transform: scale(1.08);
     transform-origin: top center;
+    padding: 0.4rem 0.6rem; /* tighter vertical + horizontal padding */
+    gap: 0.4rem; /* reduce space between logo + links */
+  }
+
+  /* Logo spacing */
+  .navbar-logo {
+    margin-right: 0.3rem; /* tighter gap */
+  }
+
+  /* Nav links */
+  .navbar a {
+    font-size: 0.9rem; /* slightly smaller text */
+    padding: 0.4rem 0.5rem; /* tighter buttons */
+    letter-spacing: 0.01em;
+  }
+
+  /* If your nav items are in a flex container */
+  .navbar-links {
+    gap: 0.4rem; /* compress spacing between links */
   }
 }
-@media (max-width: 500px) {
-  .navbar {
-    padding-left: 0.6rem;
-    padding-right: 0.6rem;
-  }
-}
+
 
 
 
