@@ -386,14 +386,21 @@
   });
 </script>
 <script>
-  const track = document.querySelector(".swiper-track");
+const track = document.querySelector(".swiper-track");
 const slides = document.querySelectorAll(".article");
 const nextBtn = document.querySelector(".swiper-btn.next");
 const prevBtn = document.querySelector(".swiper-btn.prev");
 
 let index = 0;
-const slidesToShow = 3;
 const totalSlides = slides.length;
+
+function getSlidesToShow() {
+  const width = window.innerWidth;
+
+  if (width <= 600) return 1;     // mobile portrait
+  if (width <= 900) return 2;     // tablet / phone landscape
+  return 3;                       // desktop
+}
 
 function updateSwiper() {
   const slideWidth = slides[0].offsetWidth;
@@ -401,20 +408,40 @@ function updateSwiper() {
 }
 
 nextBtn.addEventListener("click", () => {
-  if (index < totalSlides - slidesToShow) {
+  const slidesToShow = getSlidesToShow();
+  const maxIndex = totalSlides - slidesToShow;
+
+  if (index >= maxIndex) {
+    index = 0;                  // wrap to start
+  } else {
     index++;
-    updateSwiper();
   }
+
+  updateSwiper();
 });
 
 prevBtn.addEventListener("click", () => {
-  if (index > 0) {
+  const slidesToShow = getSlidesToShow();
+  const maxIndex = totalSlides - slidesToShow;
+
+  if (index <= 0) {
+    index = maxIndex;           // wrap to end
+  } else {
     index--;
-    updateSwiper();
   }
+
+  updateSwiper();
 });
 
-window.addEventListener("resize", updateSwiper);
+window.addEventListener("resize", () => {
+  const slidesToShow = getSlidesToShow();
+  const maxIndex = totalSlides - slidesToShow;
+
+  // Prevent overflow when resizing smaller
+  if (index > maxIndex) index = maxIndex;
+
+  updateSwiper();
+});
 
 </script>
 
