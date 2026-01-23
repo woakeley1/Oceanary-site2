@@ -768,13 +768,57 @@ body.navbar-active {
   text-align: center;
 }
 
+/* mobile override */
 @media (max-width: 600px) {
-  .hero,
   .section2.about {
-    background-size: 180%; /* zooms in slightly */
-    background-position: center top;
+    min-height: 70vh;          /* shorter than full screen */
+    padding: 3rem 2rem;
+
+    background:
+      linear-gradient(
+        to right,
+        rgba(10, 25, 47, 0.9) 0%,
+        rgba(10, 25, 47, 0.85) 45%,
+        rgba(10, 25, 47, 0.4) 70%,
+        rgba(10, 25, 47, 0.1) 100%
+      ),
+      url('storebackground.png') 70% center / cover no-repeat;
+      /* 70% pushes focus right so shop items stay visible */
+  }
+
+  .section2-different {
+    font-size: 2.4rem;
+  }
+
+  .section2-h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .section-aboutintro {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .coming-soon-badge {
+    font-size: 0.75rem;
+    max-width: 150px;
+  }
+
+  .waitlist-btn {
+    padding: 0.75rem 2rem;
+    font-size: 0.9rem;
+    max-width: 220px;
   }
 }
+
+/* @media (max-width: 600px) {
+  .hero,
+  .section2.about {
+    background-size: 180%; 
+    background-position: center top;
+  }
+} */
 
 
 
