@@ -622,6 +622,21 @@ body.navbar-active {
   padding-bottom: 1px; /* stops margin collapse */
 }
 
+@media (max-width: 600px) {
+  .hero-content {
+    transform: translateY(-10%);
+  }
+
+  .hero-logo img {
+    max-width: 350px;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+}
+
 
 .hero::after {
   content: "";
