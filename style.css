@@ -620,7 +620,7 @@ body.navbar-active {
   position: relative;
   z-index: 0;
 }
-@media (max-width: 768px) {
+@media (max-width: 550px) {
   .hero {
     height: 50vh;        /* much shorter */
     min-height: 50vh;
