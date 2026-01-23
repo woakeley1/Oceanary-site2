@@ -926,3 +926,46 @@ body.navbar-active {
 }
 
 
+@media (max-width: 600px) {
+  .about-teaser {
+    padding: 2rem 0;
+    text-align: center;
+  }
+
+  .about-teaser__eyebrow {
+    font-size: 0.7rem;
+    margin-bottom: 1.5rem;
+    gap: 0.5rem;
+  }
+
+  .about-teaser__content {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0 1.25rem;
+  }
+
+  .about-teaser__logo img {
+    width: 120px;
+  }
+
+  .about-teaser__text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 100%;
+  }
+
+  .about-teaser__link {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+  }
+
+  .about-teaser__pillars {
+    font-size: 0.75rem;
+    margin-top: 0.75rem;
+  }
+
+  .about-teaser__pillars-item,
+  .about-teaser__pillars-separator {
+    margin-right: 0.25rem;
+  }
+}
