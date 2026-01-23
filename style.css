@@ -503,21 +503,7 @@ body.navbar-active {
   right: 10px;
 }
 
-/* ================= RESPONSIVE ================= */
 
-/* 2 cards on tablets */
-@media (max-width: 900px) {
-  .article {
-    flex: 0 0 calc(100% / 2);
-  }
-}
-
-/* 1 card on mobile */
-@media (max-width: 600px) {
-  .article {
-    flex: 0 0 100%;
-  }
-}
 
 
 
