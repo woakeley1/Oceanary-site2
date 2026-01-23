@@ -619,8 +619,9 @@ body.navbar-active {
   padding: 0 2rem;
   position: relative;
   z-index: 0;
-  padding-bottom: 0.1px; /* prevents margin collapse */
+  padding-bottom: 1px; /* stops margin collapse */
 }
+
 
 .hero::after {
   content: "";
