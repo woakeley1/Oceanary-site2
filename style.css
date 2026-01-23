@@ -796,3 +796,10 @@ body.navbar-active {
 .about-teaser__pillars-separator {
   margin-right: 0.35rem;
 }
+
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
