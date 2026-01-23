@@ -85,31 +85,34 @@ body.navbar-active {
   color: #4da6ff;
 }
 
+/* optimised for portrait? */
 @media (max-width: 500px) {
 
-  /* Slight global scale */
+  /* Slight global scale for readability */
   .navbar {
     transform: scale(1.08);
     transform-origin: top center;
-    padding: 0.4rem 0.6rem; /* tighter vertical + horizontal padding */
-    gap: 0.4rem; /* reduce space between logo + links */
+    height: 60px;              /* shorter nav */
+    padding: 0 1.2rem;         /* much tighter horizontal padding */
+    gap: 0.4rem;               /* compress spacing between logo + links */
   }
 
-  /* Logo spacing */
-  .navbar-logo {
-    margin-right: 0.3rem; /* tighter gap */
+  /* Logo smaller + tighter */
+  .logo img {
+    max-height: 42px;          /* down from 55px */
+    margin-right: 0.4rem;      /* reduce space between logo + nav items */
   }
 
-  /* Nav links */
+  /* Nav list spacing */
+  .navbar ul {
+    gap: 1rem;                 /* down from 2rem */
+  }
+
+  /* Nav links tighter + slightly smaller */
   .navbar a {
-    font-size: 0.9rem; /* slightly smaller text */
-    padding: 0.4rem 0.5rem; /* tighter buttons */
+    font-size: 0.9rem;
+    padding: 0.2rem 0.3rem;    /* tighter hitbox */
     letter-spacing: 0.01em;
-  }
-
-  /* If your nav items are in a flex container */
-  .navbar-links {
-    gap: 0.4rem; /* compress spacing between links */
   }
 }
 
