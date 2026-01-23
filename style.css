@@ -134,33 +134,7 @@ body.navbar-active {
   font-size: 1rem;
 }
 
-/* =========================
-   RESPONSIVE FIXES (iPhone SE & below)
-========================= */
-@media (max-width: 480px) {
-  .navbar {
-    padding: 0 1rem;
-    height: 60px;
-  }
 
-  .navbar ul {
-    gap: 1rem;
-  }
-}
-@media screen and (max-width: 480px) {
-  .navbar ul {
-    display: none !important;
-    visibility: hidden;
-  }
-  .navbar {
-    justify-content: center; /* centers logo */
-    /* display: none; */
-  }
-
-  .logo img {
-    max-height: 50px;
-  }
-}
 
 /* Container for the whole module */
 .oceanary-news {
