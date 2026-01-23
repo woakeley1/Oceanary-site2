@@ -621,17 +621,19 @@ body.navbar-active {
   z-index: 0;
   padding-bottom: 1px;
 }
+
+
 @media (max-width: 768px) {
   .hero {
+    height: 100dvh;
     min-height: 100dvh;
-    height: auto;
 
-    /* Rewrite how the background behaves on phones */
-    background-position: center center;
-    background-size: cover;   /* change to 'contain' if you want no cropping */
+    background-position: center 25%;
+    background-size: cover;
     background-repeat: no-repeat;
 
-    background-color: #000; /* fallback */
+    /* remove this or you’ll see black when image doesn’t fill */
+    background-color: transparent;
   }
 
   .hero::after {
@@ -650,7 +652,6 @@ body.navbar-active {
     font-size: 1rem;
   }
 }
-
 
 .hero::after {
   content: "";
