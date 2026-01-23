@@ -460,7 +460,7 @@ body.navbar-active {
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  font-size: clamp(3rem, 1vw, 1.2rem);
+  font-size: clamp(1rem, 2vw, 1.4rem);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   opacity: 0.6;
