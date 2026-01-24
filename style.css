@@ -216,23 +216,19 @@ body.navbar-active {
     grid-column: span 1 !important;
   }
 
+  /* Keep trending visible on tablet / landscape */
   .trending-news {
     margin-top: 2rem;
   }
 }
 
 @media (max-width: 600px) {
-  .trending-item {
-    gap: 0.8rem;
-  }
-
-  .trending-thumb {
-    width: 70px;
-    height: 70px;
-    object-fit: cover;
-    border-radius: 8px;
+  /* Hide trending completely on mobile */
+  .trending-news {
+    display: none;
   }
 }
+
 
 
 /* Breaking News Banner */
