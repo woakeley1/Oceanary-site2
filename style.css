@@ -203,32 +203,6 @@ body.navbar-active {
 }
 
 
-@media (max-width: 900px) {
-  .oceanary-news {
-    display: block;
-  }
-
-  .featured-articles {
-    grid-template-columns: 1fr !important;
-  }
-
-  .article-card.wide {
-    grid-column: span 1 !important;
-  }
-
-  /* Keep trending visible on tablet / landscape */
-  .trending-news {
-    margin-top: 2rem;
-  }
-}
-
-@media (max-width: 600px) {
-  /* Hide trending completely on mobile */
-  .trending-news {
-    display: none;
-  }
-}
-
 
 
 /* Breaking News Banner */
@@ -439,6 +413,38 @@ body.navbar-active {
 .trending-news {
   height: 100%;
 }
+
+
+
+@media (max-width: 900px) {
+  .oceanary-news {
+    display: block;
+  }
+
+  .featured-articles {
+    grid-template-columns: 1fr !important;
+  }
+
+  .article-card.wide {
+    grid-column: span 1 !important;
+  }
+
+  /* Keep trending visible on tablet / landscape */
+  .trending-news {
+    /* margin-top: 2rem; */
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Hide trending completely on mobile */
+  .trending-news {
+    display: none;
+  }
+}
+
+
+
 /* ================= QUICK READ SECTION ================= */
 
 
