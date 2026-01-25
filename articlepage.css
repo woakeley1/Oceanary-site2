@@ -262,7 +262,7 @@
   .store-rail {
     position: relative;
     top: auto;
-    height: 110px;
+    height: 150px;
     width: 100%;
     display: flex;
     flex-direction: row;
