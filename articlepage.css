@@ -1,21 +1,117 @@
+:root {
+  --navbar-height: 80px;
+}
+
+/* ARTICLE */
 .article-page {
-  max-width: 900px;
+  max-width: 100%;
+  padding: 3.5rem 4rem;
+  background: rgba(73, 118, 150, 0.247);
+  border-radius: 28px;
+}
+
+/* LAYOUT */
+.blog-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 900px) 260px;
+  gap: 2rem;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 2rem;
 }
 
+@media (max-width: 1100px) {
+  .blog-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* SIDEBAR */
+.blog-sidebar {
+  display: flex;
+  align-items: flex-start;
+}
+
+/* STORE RAIL */
+.store-rail {
+  display: block;
+  position: sticky;
+  top: calc(var(--navbar-height) + 20px);
+  height: 440px;
+  max-height: 140vh;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #111;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  text-decoration: none;
+  color: #fff;
+}
+
+/* IMAGE */
+.store-rail img {
+  width: 100%;
+  height: 55%;
+  object-fit: cover;
+  object-position: right top;
+  filter: brightness(0.75) contrast(1.1);
+}
+
+/* CONTENT */
+.store-rail-content {
+  padding: 1.4rem;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0),
+    rgba(0,0,0,0.6),
+    rgba(0,0,0,0.9)
+  );
+}
+
+.store-rail-content span {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.store-rail-content h3 {
+  font-size: 1.05rem;
+  margin: 0.4rem 0;
+  line-height: 1.3;
+}
+
+.store-rail-content p {
+  font-size: 0.85rem;
+  opacity: 0.75;
+  margin-bottom: 0.8rem;
+}
+
+.store-rail-content strong {
+  font-size: 0.85rem;
+  color: var(--accent);
+}
+
+
 /* HERO */
 .article-hero {
   position: relative;
-  border-radius: 18px;
+  border-radius: 22px;
   overflow: hidden;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.45);
 }
 
 .article-hero-image {
   width: 100%;
-  height: 420px;
+  height: 480px;
   object-fit: cover;
+  transform: scale(1.05);
+  filter: brightness(0.9) contrast(1.1) saturate(1.15);
+  transition: transform 1.2s ease;
+}
+
+.article-hero:hover .article-hero-image {
+  transform: scale(1.12);
 }
 
 .article-hero::before {
@@ -24,9 +120,11 @@
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(0,0,0,0.3),
-    rgba(0,0,0,0.8)
+    rgba(0,0,0,0.15) 0%,
+    rgba(0,0,0,0.6) 50%,
+    rgba(0,0,0,0.9) 100%
   );
+  z-index: 1;
 }
 
 .article-hero-content {
@@ -71,6 +169,8 @@
   font-size: 1.6rem;
   color: #fff;
 }
+
+
 /* AUTHOR CARD */
 .author-card {
   margin-top: 4rem;
@@ -116,6 +216,102 @@
   opacity: 0.85;
   line-height: 1.5;
 }
+
+
+/* ===============================
+   TABLET / LARGE PHONES
+   (Horizontal, full width, medium height)
+================================ */
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .store-rail {
+    position: relative;
+    top: auto;
+    height: 140px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .store-rail img {
+    width: 40%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right center;
+  }
+
+  .store-rail-content {
+    width: 60%;
+    padding: 1rem 1.2rem;
+    background: #111;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+
+/* ===============================
+   MOBILE PORTRAIT
+   (Shorter, subtle, full width)
+================================ */
+
+@media (max-width: 480px) {
+  .store-rail {
+    position: relative;
+    top: auto;
+    height: 110px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .store-rail img {
+    width: 42%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right center;
+  }
+
+  .store-rail-content {
+    width: 58%;
+    padding: 0.8rem 1rem;
+    background: #111;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .store-rail-content h3 {
+    font-size: 0.9rem;
+  }
+
+  .store-rail-content p,
+  .store-rail-content strong {
+    font-size: 0.75rem;
+  }
+}
+
+/* Tablet / Large phones */
+@media (min-width: 481px) and (max-width: 768px) {
+  .store-rail {
+    border-radius: 14px;
+    overflow: hidden;
+  }
+}
+
+/* Mobile portrait */
+@media (max-width: 480px) {
+  .store-rail {
+    border-radius: 12px;
+    overflow: hidden;
+  }
+}
+
 
 
 /* =========================
