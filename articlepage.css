@@ -312,6 +312,13 @@
   }
 }
 
+@media (max-width: 480px) {
+  .article-page {
+    padding: 1.4rem 1rem;
+  }
+}
+
+
 
 
 /* =========================
