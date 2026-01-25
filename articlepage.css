@@ -312,12 +312,23 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+  .blog-layout {
+    padding: 0;              /* remove outer spacing */
+    max-width: 100%;
+  }
+
+  main {
+    padding: 0;
+  }
+
   .article-page {
-    padding: 1.4rem 1rem;
+    max-width: 100%;
+    margin: 0;               /* remove centering margin */
+    padding: 1.8rem 1.2rem;  /* tighter mobile padding */
+    border-radius: 0;        /* edge-to-edge like native apps */
   }
 }
-
 
 
 
