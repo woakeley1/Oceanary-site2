@@ -41,17 +41,17 @@
 <body>
 
 <section class="about">
+  <div class="about-overlay">
+    
+    <div class="about-card">
+      <h1>About Us</h1>
+      <p>
+        Oceanary is a story-driven ocean brand built to bring people closer to our oceans through journalism, products and partnerships that champion those shaping the future. 
+      </p>
+    </div>
 
-  <div class="about-card">
-    <h1>About Us</h1>
-    <p>
-      Oceanary is a story-driven ocean brand built to bring people closer to our oceans through journalism, products and partnerships that champion those shaping the future. 
-    </p>
-  </div>
-
-  <!-- Bottom cinematic info bar -->
-  <div class="about-footer">
-    <div class="about-block">
+    <div class="about-footer">
+      <div class="about-block">
       <h4>Exploration</h4>
       <p>Capturing stories through articles, videos, and posts.</p>
     </div>
@@ -65,11 +65,10 @@
       <h4>Discover More</h4>
       <a href="index.html#featured-articles">Checkout Our Articles →</a>
     </div>  
+    </div>
+
   </div>
-
 </section>
-
-
 <!-- 
   <article class="about2-card store">
     <div class="card-media"></div>
@@ -218,5 +217,17 @@
       document.body.classList.remove("navbar-active");
     }
   });
+</script>
+
+<script>
+window.addEventListener("scroll", () => {
+  const about = document.querySelector(".about");
+  const card = document.querySelector(".about-card");
+
+  const rect = about.getBoundingClientRect();
+  const progress = Math.min(Math.max(-rect.top / window.innerHeight, 0), 1);
+
+  card.style.transform = `translateY(${-progress * 80}px)`;
+});
 </script>
 </html>
