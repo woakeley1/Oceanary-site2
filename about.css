@@ -224,3 +224,155 @@ body{
   max-width: 650px;
   opacity: 0.85;
 }
+
+
+
+
+/* About 2 Section – Cinematic Cards */
+
+.about2-container {
+  padding: 6rem 8%;
+  display: grid;
+  gap: 5rem;
+  background: transparent;
+}
+
+/* Card base */
+.about2-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 22px;
+  overflow: hidden;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  opacity: 0;
+  animation: about2FadeUp 1s ease forwards;
+}
+
+.about2-card:nth-child(2) { animation-delay: 0.3s; }
+.about2-card:nth-child(3) { animation-delay: 0.6s; }
+
+.about2-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.45);
+}
+
+/* Image side */
+.about2-card .card-media {
+  min-height: 340px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 1s ease, filter 1s ease;
+  filter: brightness(0.85);
+}
+
+.about2-card:hover .card-media {
+  transform: scale(1.1);
+  filter: brightness(1);
+}
+
+/* Replace with your own images */
+.about2-card.readers .card-media {
+  background-image: url("social.jpg");
+}
+
+.about2-card.ventures .card-media {
+  background-image: url("boat.jpg");
+}
+
+.about2-card.store .card-media {
+  background-image: url("storebackground.png");
+}
+
+/* Content side */
+.about2-card .card-content {
+  padding: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about2-card h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: #3fc1c9;
+  letter-spacing: 1px;
+}
+
+.about2-card p {
+  line-height: 1.8;
+  opacity: 0.9;
+  margin-bottom: 1.2rem;
+  max-width: 520px;
+}
+
+/* Buttons */
+.about2-btn {
+  margin-top: 2rem;
+  align-self: flex-start;
+  background: transparent;
+  border: 1px solid #3fc1c9;
+  color: #3fc1c9;
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.about2-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #3fc1c9;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+  z-index: -1;
+}
+
+.about2-btn:hover::before {
+  transform: scaleX(1);
+}
+
+.about2-btn:hover {
+  color: #061a25;
+}
+
+/* Fade-up animation */
+@keyframes about2FadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about2-card {
+    grid-template-columns: 1fr;
+  }
+
+  .about2-card .card-media {
+    min-height: 260px;
+  }
+
+  .about2-card .card-content {
+    padding: 2.5rem;
+  }
+
+  .about2-card h2 {
+    font-size: 1.8rem;
+  }
+}
+
