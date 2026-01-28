@@ -1,0 +1,226 @@
+:root{
+  --cream:#F6F3E9;
+  --dark:#0e0e0e;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family: system-ui, sans-serif;
+
+  color:var(--cream);
+}
+
+/* HERO */
+.about{
+  min-height:100svh;
+  background:url("puffin.jpg") 85% center / cover no-repeat;
+  display:flex;
+  align-items:center;
+  padding:6rem;
+  position:relative;
+  overflow:hidden;
+}
+
+/* cinematic vignette */
+.about::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  /* background:linear-gradient(
+    90deg,
+    rgba(0,0,0,.75) 0%,
+    rgba(0,0,0,.45) 30%,
+    rgba(0,0,0,.2) 60%,
+    rgba(0,0,0,.05) 100%
+  ); */
+}
+
+/* GLASS CARD (no dark fill, only glass) */
+.about-card{
+  margin-left: -4rem;
+  margin-top: -2rem;
+  position:relative;
+  z-index:2;
+  max-width:520px;
+  padding:3.5rem 4rem;
+  /* background:rgba(255,255,255,0.08); */
+  /* backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px); */
+  /* border-radius:20px;
+  border:1px solid rgba(255,255,255,0.15); */
+  /* box-shadow:0 30px 60px rgba(0,0,0,.5); */
+  animation:fadeUp 1.2s ease forwards;
+  opacity:0;
+  transform:translateY(40px);
+}
+
+.about-card h1{
+  font-size:3.2rem;
+  line-height:1.1;
+  margin-bottom:1.5rem;
+}
+
+.about-card p{
+  line-height:1.7;
+  opacity:.9;
+}
+
+/* BOTTOM BAR LIKE YOUR EXAMPLE */
+.about-footer{
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:100%;
+  padding:2.5rem 6rem;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:2rem;
+  background:linear-gradient(
+    to top,
+    rgba(0,0,0,.75),
+    rgba(0,0,0,.2),
+    transparent
+  );
+  z-index:2;
+}
+
+.about-block{
+  font-size:.9rem;
+  opacity:.85;
+}
+
+.about-block h4{
+  font-size:1rem;
+  margin-bottom:.5rem;
+  letter-spacing:.5px;
+  text-transform:uppercase;
+  opacity:.9;
+}
+
+.about-cta{
+  text-align:right;
+}
+
+.about-cta a{
+  color:var(--cream);
+  text-decoration:none;
+  border-bottom:1px solid var(--cream);
+  padding-bottom:4px;
+  transition:.3s;
+}
+
+.about-cta a:hover{
+  opacity:.6;
+}
+
+/* ANIM */
+@keyframes fadeUp{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .about{
+    padding:3rem 2rem;
+    background-position:center;
+  }
+
+  .about-footer{
+    grid-template-columns:1fr;
+    padding:2rem;
+  }
+
+  .about-cta{
+    text-align:left;
+  }
+}
+
+
+/* =========================
+   MISSION DIVIDER
+========================= */
+.mission-divider {
+  background: linear-gradient(135deg, #0077b6, #003049);
+  color: #fff;
+  padding: 2.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+
+.mission-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1100px;
+  width: 100%;
+}
+
+.mission-icon img {
+  width: 120px;
+  height: auto;
+}
+
+.mission-text h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 0;
+  color: #fff;
+}
+
+.mission-text p {
+  margin: 0.5rem 0 0;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+
+
+
+/* Shop Section */
+.section5.about {
+  min-height: 100svh;
+  background: 
+    linear-gradient(
+      to right,
+      rgba(10, 25, 47, 0.85) 0%,
+      rgba(10, 25, 47, 0.75) 40%,
+      rgba(10, 25, 47, 0.3) 65%,
+      rgba(10, 25, 47, 0.05) 100%
+    ),
+    url('deep.jpg') center/cover no-repeat;
+    
+  color: #f5f5ff;
+  padding: 6rem 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+
+.section5-different {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+.section5-h3 {
+  font-size: 2.1rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.section-aboutintro {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  max-width: 650px;
+  opacity: 0.85;
+}

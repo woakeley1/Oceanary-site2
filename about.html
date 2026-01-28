@@ -5,6 +5,7 @@
   <title>Oceanary</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="footer.css" />
+  <link rel="stylesheet" href="about.css" />
   <link rel="icon" type="image/png" href="badge logo.PNG">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -32,3 +33,142 @@
 
     <!-- <button class="btn donate" id="contactBtn">Contact Us</button> -->
   </header>
+
+<body>
+
+
+
+<body>
+
+<section class="about">
+
+  <div class="about-card">
+    <h1>About Us</h1>
+    <p>
+      Oceanary is a story-driven ocean brand built to bring people closer to our oceans through journalism, products and partnerships that champion those shaping the future. 
+    </p>
+  </div>
+
+  <!-- Bottom cinematic info bar -->
+  <div class="about-footer">
+    <div class="about-block">
+      <h4>Exploration</h4>
+      <p>Capturing stories through articles, videos, and posts.</p>
+    </div>
+
+    <div class="about-block">
+      <h4>Oceanary Badge</h4>
+      <p>Creating a network of verified ocean partnerships.</p>
+    </div>
+
+    <div class="about-block about-cta">
+      <h4>Discover More</h4>
+      <a href="index.html#featured-articles">Checkout Our Articles →</a>
+    </div>  
+  </div>
+
+</section>
+
+<section>
+  <div>
+    <h1>For Our Readers</h1>
+    <p>We create cinematic, editorial content that makes the ocean feel personal. From long‑form features to visual dispatches, our work blends storytelling, design, and insight to help readers understand the ventures, ideas, and people redefining ocean innovation.
+Alongside our media, we curate a growing collection of ocean‑inspired products that support real ventures and give consumers a way to participate in impact.
+</p>
+  </div>
+</section>
+
+<section>
+  <div>
+    <h1>For Ventures and Brands</h1>
+    <p>Oceanary partners with ocean‑focused companies, founders and organisations to amplify their stories with clarity and authority.
+Through editorial coverage, brand collaborations, and our developing Partner Network we help ventures communicate their mission and reach new audiences.
+</p>
+  </div>
+</section>
+
+<section class="mission-divider">
+  <div class="mission-content">
+    <div class="mission-icon">
+      <img src="OfficialBadge.png" alt="Oceanary Badge Icon">
+    </div>
+    <div class="mission-text fade-up">
+      <h2>The Oceanary Badge</h2>
+      <p>Each badge we issue is a signal of belief—earned through story, sincerity, and visible impact. It makes ventures discoverable, fundable, and emotionally credible across our platform and media campaigns.</p>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="mission" class="section5 about">
+  <h2 class="section5-different fade-up">Our Mission.</h2>
+  <h3 class="section5-h3 fade-up">Setting a new standard for ocean credibility.</h3>
+
+  <p class="section-aboutintro fade-up">
+    Oceanary Media exists to build a modern ocean brand that informs, inspires and empowers - connecting consumers, creators and ventures through stories that matter and products that drive real impact.
+  </p>
+
+  <!-- <p class="section-aboutintro fade-up">
+    <strong>Help define what credible ocean storytelling looks like.</strong>
+  </p> -->
+</section>
+
+
+
+
+</body>
+
+<!-- Footer  -->
+<footer class="site-footer">
+  <div class="site-footer__inner">
+
+    <div class="footer-col footer-brand">
+      <img src="OceanaryFinalLogo1.png" alt="Oceanary Badge" class="footer-logo" />
+      
+      <!-- <p class="footer-tagline">Cinematic stories from the ocean.</p> -->
+    </div>
+
+    <div class="footer-col footer-links">
+      <h4>Explore</h4>
+      <a href="#featured#articles">Latest Stories</a>
+      <a href="about.html">About</a>
+      <a href="index.html#store">Store</a>
+    </div>
+
+    <div class="footer-col footer-meta">
+      <h4>Connect</h4>
+      
+      <a href="https://instagram.com/oceanaryofficial" target="_blank">Instagram</a>
+      <a href="https://twitter.com/oceanarymedia" target="_blank">Twitter</a>
+      <a href="https://youtube.com/oceanaryofficial" target="_blank">Youtube</a>
+      <a href="https://www.tiktok.com/@oceanaryofficial" target="_blank">Tiktok</a>
+      <a href="mailto:contact@oceanary.org">Email Us</a>
+      <p class="footer-copy">&copy; 2026 Oceanary Media</p>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+  const navbar = document.querySelector(".navbar");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 80) {
+      if (!navbar.classList.contains("sticky")) {
+        navbar.classList.add("sticky");
+        document.body.classList.add("navbar-active");
+
+        // trigger animation frame
+        requestAnimationFrame(() => {
+          navbar.classList.add("show");
+        });
+      }
+    } else {
+      navbar.classList.remove("show");
+      navbar.classList.remove("sticky");
+      document.body.classList.remove("navbar-active");
+    }
+  });
+</script>
+</html>
