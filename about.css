@@ -197,23 +197,27 @@
 ================================ */
 @media (max-width: 768px){
 
-  /* ================================
+  /* =================================
      ABOUT CINEMATIC CONTAINER
-  ================================ */
+  ================================= */
   .about-cinematic{
     position: relative;
-    min-height: auto;         /* let scenes control their own height */
+    min-height: 100dvh; /* full viewport */
     padding: 0;
     overflow: hidden;
   }
 
-  /* ================================
+  /* =================================
      SCENES
-  ================================ */
+  ================================= */
   .scene{
     position: absolute;
     inset: 0;
-    padding: 1.5rem 1rem;
+    display: flex;              /* use flex to center content */
+    justify-content: center;
+    align-items: center;        /* vertical centering */
+    flex-direction: column;
+    padding: 2rem 1.2rem;
     box-sizing: border-box;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
@@ -228,44 +232,45 @@
     pointer-events: auto;
   }
 
-  /* Individual scene heights */
+  /* Individual scene heights (min-height optional now) */
   .scene-mission,
   .scene-store{
-    min-height: 130vh;        /* scale down from before */
+    min-height: auto;          /* content defines height */
   }
 
   .scene-impact{
-    min-height: 110vh;        /* smaller since impact cards are compact */
+    min-height: auto;
   }
 
-  /* ================================
+  /* =================================
      MISSION / STORE CARDS
-  ================================ */
+  ================================= */
   .mission-card,
   .about-card{
     max-width: 95%;
-    padding: 1.6rem 1.2rem;    /* smaller padding */
-    border-radius: 14px;
-    transform: scale(0.95);    /* subtle scaling down to fit */
-    transform-origin: top center;
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
+    transform: scale(1);        /* keep normal scale */
   }
 
   .mission-card h1,
   .about-card h1{
-    font-size: 1.8rem;
+    font-size: 1.9rem;
+    text-align: center;
   }
 
   .mission-card p,
   .about-card p{
-    font-size: .9rem;
+    font-size: .95rem;
     line-height: 1.5;
+    text-align: center;
   }
 
-  /* ================================
+  /* =================================
      IMPACT INTRO
-  ================================ */
+  ================================= */
   .impact-intro{
-    text-align: left;
+    text-align: center;
     padding: 0 0.5rem;
   }
 
@@ -280,9 +285,9 @@
     opacity: .85;
   }
 
-  /* ================================
+  /* =================================
      IMPACT GRID
-  ================================ */
+  ================================= */
   .impact-stats{
     margin-top: 1rem;
     display: grid;
@@ -310,9 +315,9 @@
     opacity: .7;
   }
 
-  /* ================================
+  /* =================================
      NAV BUTTONS
-  ================================ */
+  ================================= */
   .scene-btn,
   .scene-nav button{
     margin-top: 1.2rem;
