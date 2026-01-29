@@ -195,125 +195,127 @@
 /* ================================
    RESPONSIVE
 ================================ */
-@media (max-width: 768px){
+@media (max-width: 768px) {
 
-  /* =================================
+  /* --------------------------------
      CINEMATIC CONTAINER
-  ================================= */
-  .about-cinematic{
+  -------------------------------- */
+  .about-cinematic {
     position: relative;
-    min-height: auto; /* allow natural height */
-    padding: 2rem 0;
+    width: 100%;
+    min-height: 100dvh; /* full viewport height */
+    padding: 0;
+    overflow: hidden;
   }
 
-  /* =================================
+  /* --------------------------------
      SCENES
-  ================================= */
-  .scene{
-    position: relative;          /* key change: normal flow */
+  -------------------------------- */
+  .scene {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* fill viewport */
     display: flex;
+    justify-content: center; /* horizontal center */
+    align-items: center;     /* vertical center */
     flex-direction: column;
-    justify-content: flex-start; /* align top instead of center */
-    align-items: center;
-    padding: 1.5rem 1rem;
+    padding: 1rem 1rem;
     box-sizing: border-box;
 
     opacity: 0;
     pointer-events: none;
-    transition: opacity .4s ease;
-
-    overflow-y: visible;         /* allow scene to expand naturally */
-    max-width: 100%;
+    transition: opacity 0.4s ease;
   }
 
-  .scene-active{
+  .scene-active {
     opacity: 1;
     pointer-events: auto;
   }
 
-  /* =================================
+  /* --------------------------------
      MISSION / STORE CARDS
-  ================================= */
+  -------------------------------- */
   .mission-card,
-  .about-card{
-    max-width: 95%;
-    padding: 1.8rem 1.5rem;
+  .about-card {
+    max-width: 90%;
+    width: 100%;
+    padding: 2rem 1.5rem;
     border-radius: 16px;
-    transform: scale(1);
+    transform: scale(1); /* keep size */
   }
 
   .mission-card h1,
-  .about-card h1{
-    font-size: 1.9rem;
+  .about-card h1 {
+    font-size: 2rem;
     text-align: center;
   }
 
   .mission-card p,
-  .about-card p{
-    font-size: .95rem;
+  .about-card p {
+    font-size: 0.95rem;
     line-height: 1.5;
     text-align: center;
   }
 
-  /* =================================
-     IMPACT INTRO
-  ================================= */
-  .impact-intro{
+  /* --------------------------------
+     IMPACT SCENE
+  -------------------------------- */
+  .scene-impact .impact-intro {
     text-align: center;
     padding: 0 0.5rem;
   }
 
-  .impact-intro h1{
-    font-size: 1.7rem;
-    margin-bottom: .6rem;
+  .scene-impact .impact-intro h1 {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
   }
 
-  .impact-intro p{
-    font-size: .88rem;
-    line-height: 1.45;
-    opacity: .85;
+  .scene-impact .impact-intro p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    opacity: 0.85;
   }
 
-  /* =================================
-     IMPACT GRID
-  ================================= */
-  .impact-stats{
+  .scene-impact .impact-stats {
     margin-top: 1rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: .6rem;
+    gap: 0.6rem;
+    justify-items: center;
   }
 
-  .impact-card{
-    padding: .9rem .7rem;
+  .scene-impact .impact-card {
+    padding: 0.9rem 0.7rem;
     border-radius: 12px;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     text-align: center;
     backdrop-filter: blur(6px);
+    width: 100%;
   }
 
-  .impact-card h2{
+  .scene-impact .impact-card h2 {
     font-size: 1.3rem;
-    margin-bottom: .2rem;
+    margin-bottom: 0.2rem;
   }
 
-  .impact-card span{
-    font-size: .55rem;
-    letter-spacing: .5px;
-    opacity: .7;
+  .scene-impact .impact-card span {
+    font-size: 0.55rem;
+    letter-spacing: 0.5px;
+    opacity: 0.7;
   }
 
-  /* =================================
+  /* --------------------------------
      NAV BUTTONS
-  ================================= */
+  -------------------------------- */
   .scene-btn,
-  .scene-nav button{
-    margin-top: 1.2rem;
-    padding: .6rem 1.2rem;
-    font-size: .75rem;
+  .scene-nav button {
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.75rem;
   }
-
 }
 
 
