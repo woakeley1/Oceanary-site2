@@ -197,25 +197,78 @@
 ================================ */
 @media (max-width: 768px){
 
-  /* Make the whole section breathe */
+  /* =================================
+     ABOUT CINEMATIC CONTAINER
+  ================================= */
+
   .about-cinematic{
-    min-height: 300vh;
-    padding: 4rem 0;
+    position: relative;
+    min-height: 100dvh;
+    padding: 0;
+    overflow: hidden;
   }
+
+  /* =================================
+     SCENES (still cinematic, one at a time)
+  ================================= */
 
   .scene{
+    position: absolute;
+    inset: 0;
     padding: 2rem 1.2rem;
+    box-sizing: border-box;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .4s ease;
   }
 
-  /* ======================
+  .scene-active{
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Individual scene heights */
+  .scene-mission,
+  .scene-store{
+    min-height: 160vh;
+  }
+
+  .scene-impact{
+    min-height: 120vh;
+  }
+
+  /* =================================
+     MISSION / STORE CARDS
+  ================================= */
+
+  .mission-card,
+  .about-card{
+    max-width: 100%;
+    padding: 2rem 1.6rem;
+    border-radius: 16px;
+  }
+
+  .mission-card h1,
+  .about-card h1{
+    font-size: 2rem;
+  }
+
+  .mission-card p,
+  .about-card p{
+    font-size: .95rem;
+    line-height: 1.6;
+  }
+
+  /* =================================
      IMPACT INTRO
-  ====================== */
+  ================================= */
 
   .impact-intro{
-    padding: 0;
     text-align: left;
+    padding: 0;
   }
 
   .impact-intro h1{
@@ -229,9 +282,9 @@
     opacity: .85;
   }
 
-  /* ======================
-     IMPACT GRID
-  ====================== */
+  /* =================================
+     IMPACT GRID (MOBILE TILE STYLE)
+  ================================= */
 
   .impact-stats{
     margin-top: 1.5rem;
@@ -239,10 +292,6 @@
     grid-template-columns: 1fr 1fr;
     gap: .8rem;
   }
-
-  /* ======================
-     IMPACT CARDS (MOBILE REWRITE)
-  ====================== */
 
   .impact-card{
     padding: 1rem .9rem;
@@ -265,7 +314,19 @@
     opacity: .7;
   }
 
+  /* =================================
+     NAV BUTTONS
+  ================================= */
+
+  .scene-btn,
+  .scene-nav button{
+    margin-top: 1.5rem;
+    padding: .7rem 1.4rem;
+    font-size: .8rem;
+  }
+
 }
+
 
 
 /* Landing section */
