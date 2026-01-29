@@ -198,48 +198,37 @@
 @media (max-width: 768px){
 
   /* =================================
-     ABOUT CINEMATIC CONTAINER
+     CINEMATIC CONTAINER
   ================================= */
   .about-cinematic{
     position: relative;
-    min-height: 100dvh; /* full viewport */
-    padding: 0;
-    overflow: hidden;
+    min-height: auto; /* allow natural height */
+    padding: 2rem 0;
   }
 
   /* =================================
      SCENES
   ================================= */
   .scene{
-    position: absolute;
-    inset: 0;
-    display: flex;              /* use flex to center content */
-    justify-content: center;
-    align-items: center;        /* vertical centering */
+    position: relative;          /* key change: normal flow */
+    display: flex;
     flex-direction: column;
-    padding: 2rem 1.2rem;
+    justify-content: flex-start; /* align top instead of center */
+    align-items: center;
+    padding: 1.5rem 1rem;
     box-sizing: border-box;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
 
     opacity: 0;
     pointer-events: none;
     transition: opacity .4s ease;
+
+    overflow-y: visible;         /* allow scene to expand naturally */
+    max-width: 100%;
   }
 
   .scene-active{
     opacity: 1;
     pointer-events: auto;
-  }
-
-  /* Individual scene heights (min-height optional now) */
-  .scene-mission,
-  .scene-store{
-    min-height: auto;          /* content defines height */
-  }
-
-  .scene-impact{
-    min-height: auto;
   }
 
   /* =================================
@@ -248,9 +237,9 @@
   .mission-card,
   .about-card{
     max-width: 95%;
-    padding: 2rem 1.5rem;
+    padding: 1.8rem 1.5rem;
     border-radius: 16px;
-    transform: scale(1);        /* keep normal scale */
+    transform: scale(1);
   }
 
   .mission-card h1,
