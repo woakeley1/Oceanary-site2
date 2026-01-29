@@ -427,6 +427,7 @@
     padding:2rem;
     flex-direction:column;
     justify-content:center;
+    background: url("mobilepuffin.jpg") center / cover no-repeat;
   }
 
   .intro-card{
