@@ -292,12 +292,7 @@
   display:grid;
   grid-template-columns:1fr 1fr 1fr;
   gap:2rem;
-  background:linear-gradient(
-    to top,
-    rgba(0,0,0,.75),
-    rgba(0,0,0,.2),
-    transparent
-  );
+
   z-index:2;
 }
 
@@ -338,19 +333,129 @@
   }
 }
 
-/* MOBILE */
-@media(max-width:900px){
+
+@media (max-width: 768px) {
+
   .intro{
-    padding:3rem 2rem;
-    background-position:center;
+    min-height:100vh;
+    padding:2rem;
+    flex-direction:column;
+    justify-content:center;
   }
 
+  .intro-card{
+    max-width:100%;
+    padding:2rem;
+    margin:0;
+    border-radius:16px;
+  }
+
+  .intro-card h1{
+    font-size:2.2rem;
+  }
+
+  /* THIS is the important fix */
   .intro-footer{
+    position:relative;
+    margin-top:2rem;
+   
     grid-template-columns:1fr;
     padding:2rem;
+    gap:1.2rem;
   }
 
   .intro-cta{
     text-align:left;
+  }
+}
+
+/* the form section */
+.waitlist-section {
+  width: 100%;
+  padding: 5rem 2rem;
+  color: white;
+  font-family: system-ui, sans-serif;
+  margin-top: 0.3rem;
+}
+
+.waitlist-section h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.waitlist-section p {
+  text-align: center;
+  font-size: 1.1rem;
+  opacity: 0.85;
+  margin-bottom: 2.5rem;
+}
+
+.waitlist-form {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 1rem;
+  align-items: center;
+}
+
+.waitlist-form input,
+.waitlist-form textarea {
+  padding: 0.9rem 1rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.05);
+  color: white;
+  font-size: 1rem;
+}
+
+.waitlist-form input::placeholder,
+.waitlist-form textarea::placeholder {
+  color: rgba(255,255,255,0.5);
+}
+
+.waitlist-form textarea {
+  grid-column: span 2;
+  resize: none;
+  height: 44px;
+}
+
+.waitlist-form button {
+  padding: 0.9rem 1.5rem;
+  border-radius: 6px;
+  border: none;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.waitlist-form button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+#status {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .waitlist-form {
+    grid-template-columns: 1fr;
+  }
+
+  .waitlist-form textarea {
+    grid-column: span 1;
+    height: 80px;
+  }
+
+  .waitlist-form button {
+    width: 100%;
   }
 }

@@ -124,8 +124,23 @@ Oceanary exists to build a modern ocean brand that informs, inspires and empower
 
 </section>
 
-<!-- This creates scroll space so the page can continue -->
-<section class="cinematic-spacer"></section>
+<section>
+  <div class="waitlist-section">
+  <h2>Join the Oceanary Waitlist</h2>
+  <p>Be the first to know when we launch.</p>
+
+  <form id="waitlist-form" class="waitlist-form">
+    <input type="text" name="name" placeholder="Your name (optional)">
+    <input type="email" name="email" placeholder="Your email" required>
+    <textarea name="message" rows="3" placeholder="Message (optional)"></textarea>
+    <button type="submit">Join Waitlist</button>
+  </form>
+
+  <div id="status"></div>
+</div>
+</section>
+
+
 
 </body>
 
@@ -228,6 +243,39 @@ window.addEventListener("scroll", () => {
   } else {
     cinematic.classList.remove("hide");
   }
+});
+</script>
+
+
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function () {
+    emailjs.init("YOUR_PUBLIC_KEY");
+  })();
+</script>
+<script>
+const form = document.getElementById("waitlist-form");
+const status = document.getElementById("status");
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+  status.textContent = "Sending...";
+
+  emailjs.sendForm(
+    "YOUR_SERVICE_ID",
+    "YOUR_TEMPLATE_ID",
+    this
+  ).then(() => {
+    status.textContent = "You're on the waitlist 🌊";
+    status.style.color = "#7CFFB2";
+    form.reset();
+  }).catch((err) => {
+    status.textContent = "Something went wrong. Try again.";
+    status.style.color = "#FF7C7C";
+    console.error(err);
+  });
 });
 </script>
 
