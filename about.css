@@ -197,25 +197,23 @@
 ================================ */
 @media (max-width: 768px){
 
-  /* =================================
+  /* ================================
      ABOUT CINEMATIC CONTAINER
-  ================================= */
-
+  ================================ */
   .about-cinematic{
     position: relative;
-    min-height: 100dvh;
+    min-height: auto;         /* let scenes control their own height */
     padding: 0;
     overflow: hidden;
   }
 
-  /* =================================
-     SCENES (still cinematic, one at a time)
-  ================================= */
-
+  /* ================================
+     SCENES
+  ================================ */
   .scene{
     position: absolute;
     inset: 0;
-    padding: 2rem 1.2rem;
+    padding: 1.5rem 1rem;
     box-sizing: border-box;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
@@ -233,68 +231,67 @@
   /* Individual scene heights */
   .scene-mission,
   .scene-store{
-    min-height: 160vh;
+    min-height: 130vh;        /* scale down from before */
   }
 
   .scene-impact{
-    min-height: 120vh;
+    min-height: 110vh;        /* smaller since impact cards are compact */
   }
 
-  /* =================================
+  /* ================================
      MISSION / STORE CARDS
-  ================================= */
-
+  ================================ */
   .mission-card,
   .about-card{
-    max-width: 100%;
-    padding: 2rem 1.6rem;
-    border-radius: 16px;
+    max-width: 95%;
+    padding: 1.6rem 1.2rem;    /* smaller padding */
+    border-radius: 14px;
+    transform: scale(0.95);    /* subtle scaling down to fit */
+    transform-origin: top center;
   }
 
   .mission-card h1,
   .about-card h1{
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .mission-card p,
   .about-card p{
-    font-size: .95rem;
-    line-height: 1.6;
+    font-size: .9rem;
+    line-height: 1.5;
   }
 
-  /* =================================
+  /* ================================
      IMPACT INTRO
-  ================================= */
-
+  ================================ */
   .impact-intro{
     text-align: left;
-    padding: 0;
+    padding: 0 0.5rem;
   }
 
   .impact-intro h1{
-    font-size: 1.8rem;
-    margin-bottom: .8rem;
+    font-size: 1.7rem;
+    margin-bottom: .6rem;
   }
 
   .impact-intro p{
-    font-size: .9rem;
-    line-height: 1.5;
+    font-size: .88rem;
+    line-height: 1.45;
     opacity: .85;
   }
 
-  /* =================================
-     IMPACT GRID (MOBILE TILE STYLE)
-  ================================= */
-
+  /* ================================
+     IMPACT GRID
+  ================================ */
   .impact-stats{
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: .8rem;
+    gap: .6rem;
   }
 
   .impact-card{
-    padding: 1rem .9rem;
+    padding: .9rem .7rem;
     border-radius: 12px;
     background: rgba(255,255,255,0.06);
     border: 1px solid rgba(255,255,255,0.12);
@@ -303,26 +300,24 @@
   }
 
   .impact-card h2{
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     margin-bottom: .2rem;
-    line-height: 1;
   }
 
   .impact-card span{
-    font-size: .6rem;
-    letter-spacing: .6px;
+    font-size: .55rem;
+    letter-spacing: .5px;
     opacity: .7;
   }
 
-  /* =================================
+  /* ================================
      NAV BUTTONS
-  ================================= */
-
+  ================================ */
   .scene-btn,
   .scene-nav button{
-    margin-top: 1.5rem;
-    padding: .7rem 1.4rem;
-    font-size: .8rem;
+    margin-top: 1.2rem;
+    padding: .6rem 1.2rem;
+    font-size: .75rem;
   }
 
 }
