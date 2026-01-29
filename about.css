@@ -112,7 +112,7 @@
   opacity:.92;
 }
 /* ================================
-   IMPACT FUND SCENE
+   Oceanary Network
 ================================ */
 
 .impact-intro{
@@ -225,12 +225,65 @@
 }
 
 
+@media (max-width: 768px){
+
+  .about-cinematic{
+    min-height:auto;
+    padding:4rem 0;
+  }
+
+  .scene{
+    position:relative;      /* critical */
+    inset:auto;
+    opacity:1;              /* show normally */
+    transform:none;
+    pointer-events:auto;
+    padding:2rem;
+  }
+
+  .scene-active{
+    opacity:1;
+  }
+
+  .about-card,
+  .mission-card{
+    max-width:100%;
+    padding:2rem;
+    border-radius:16px;
+  }
+
+  .about-card h1,
+  .mission-card h1{
+    font-size:2.2rem;
+  }
+
+  .mission-card{
+    padding:2.5rem 2rem;
+  }
+
+  .impact-intro{
+    padding:0 1rem;
+  }
+
+  .impact-intro h1{
+    font-size:2.3rem;
+  }
+
+  .impact-stats{
+    margin-top:2.5rem;
+    gap:1.5rem;
+  }
+
+  .impact-card{
+    padding:1.8rem;
+  }
 
 
 
 
 
 
+}
 
 
 
