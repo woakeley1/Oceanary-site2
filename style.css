@@ -14,7 +14,8 @@ html {
 body {
   font-family: "Helvetica Neue", Arial, sans-serif;
   color: #fff;
-  background: linear-gradient(205deg, #0077b6, #003049);
+  background: linear-gradient(205deg, #0451a8, #011f2f);
+  
   overflow-x: hidden;
 }
 
@@ -208,7 +209,7 @@ body.navbar-active {
 /* Breaking News Banner */
 .breaking-banner {
   grid-column: 1 / -1;
-  background: linear-gradient(90deg, #00b4d8, #0077b6);
+  background: linear-gradient(90deg, #074c8d, #0077b6);
   color: #fff;
   padding: 1rem 2rem;
   font-weight: bold;
