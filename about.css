@@ -203,7 +203,7 @@
   .about-cinematic {
     position: relative;
     width: 100%;
-    min-height: 100dvh; /* full viewport height */
+    max-height: 100dvh; /* full viewport height */
     padding: 0;
     overflow: hidden;
   }
