@@ -308,12 +308,14 @@ body.navbar-active {
   margin-top: 0.4rem;
   font-size: 0.9rem;
   opacity: 0.9;
+  color: #c3c3daec;
 }
 
 .category {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  color: #00b4d8;
 }
 
 /* 
