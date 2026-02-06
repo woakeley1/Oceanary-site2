@@ -422,39 +422,52 @@
 
 @media (max-width: 768px) {
 
-  .intro{
-    min-height:100vh;
-    padding:2rem;
-    flex-direction:column;
-    justify-content:center;
-    background: url("mobilepuffindark.JPG") center / cover no-repeat;
+  .intro {
+    position: relative;
+    min-height: 100vh;
+    padding: 2rem;
+    flex-direction: column;
+    justify-content: center;
+    background: url("mobilepuffin.jpg") center / cover no-repeat;
   }
 
-  .intro-card{
-    max-width:100%;
-    padding:2rem;
-    margin:0;
-    border-radius:16px;
+  .intro::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55); /* darker for mobile */
+    z-index: 0;
   }
 
-  .intro-card h1{
-    font-size:2.2rem;
+  .intro > * {
+    position: relative;
+    z-index: 1;
   }
 
-  /* THIS is the important fix */
-  .intro-footer{
-    position:relative;
-    margin-top:2rem;
-   
-    grid-template-columns:1fr;
-    padding:2rem;
-    gap:1.2rem;
+  .intro-card {
+    max-width: 100%;
+    padding: 2rem;
+    margin: 0;
+    border-radius: 16px;
   }
 
-  .intro-cta{
-    text-align:left;
+  .intro-card h1 {
+    font-size: 2.2rem;
+  }
+
+  .intro-footer {
+    position: relative;
+    margin-top: 2rem;
+    grid-template-columns: 1fr;
+    padding: 2rem;
+    gap: 1.2rem;
+  }
+
+  .intro-cta {
+    text-align: left;
   }
 }
+
 
 
 
