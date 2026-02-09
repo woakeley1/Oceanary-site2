@@ -131,14 +131,14 @@ Oceanary is a story-driven ocean brand built to bring people closer to our ocean
   <h2>Join the Oceanary Waitlist</h2>
   <p>Be the first to know when we launch.</p>
 
-  <form id="waitlist-form" class="waitlist-form">
-    <input type="text" name="name" placeholder="Your name (optional)">
-    <input type="email" name="email" placeholder="Your email" required>
-    <textarea name="message" rows="3" placeholder="Message (optional)"></textarea>
-    <button type="submit">Join Waitlist</button>
-  </form>
+<form id="waitlist-form" class="waitlist-form">
+  <input type="text" name="from_name" placeholder="Your name (optional)">
+  <input type="email" name="from_email" placeholder="Your email" required>
+  <textarea name="message" rows="3" placeholder="Message (optional)"></textarea>
+  <button type="submit">Join Waitlist</button>
+</form>
 
-  <div id="status"></div>
+<div id="status"></div>
 </div>
 </section>
 
@@ -264,7 +264,7 @@ window.addEventListener("scroll", () => {
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
   (function () {
-    emailjs.init("YOUR_PUBLIC_KEY");
+    emailjs.init("gn8D9_03OHxjEYH4t");
   })();
 </script>
 <script>
@@ -276,8 +276,8 @@ form.addEventListener("submit", function(e) {
   status.textContent = "Sending...";
 
   emailjs.sendForm(
-    "YOUR_SERVICE_ID",
-    "YOUR_TEMPLATE_ID",
+    "service_kosntqr",
+    "template_tnhjmiq",
     this
   ).then(() => {
     status.textContent = "You're on the waitlist 🌊";
