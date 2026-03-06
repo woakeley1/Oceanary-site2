@@ -1,448 +1,433 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Oceanary</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="footer.css" />
-  <link rel="icon" type="image/png" href="ProfilePic.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oceanary — Meditation & Mindfulness</title>
 
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+:root{
+--bg:#dff0f5;
+--text-dark:#0d1117;
+--text-mid:#3a4a5c;
+--text-light:#6b7f92;
+--accent:#0ea5e9;
+--btn-bg:#0d1117;
+--btn-text:#ffffff;
+--input-bg:#f0f8fc;
+}
+
+html,body{
+height:100%;
+font-family:'DM Sans',sans-serif;
+background:var(--bg);
+color:var(--text-dark);
+overflow-x:hidden;
+}
+
+/* background */
+
+body::before{
+content:'';
+position:fixed;
+inset:0;
+
+background:
+radial-gradient(ellipse 55% 45% at 10% 15%, rgba(14,165,233,0.18) 0%, transparent 70%),
+radial-gradient(ellipse 40% 50% at 85% 80%, rgba(56,189,248,0.14) 0%, transparent 65%),
+linear-gradient(160deg,#e8f5fb 0%,#d0ecf5 50%,#c4e5f2 100%);
+
+pointer-events:none;
+z-index:0;
+}
+
+/* layout */
+
+.page{
+position:relative;
+z-index:1;
+
+min-height:100vh;
+
+display:grid;
+grid-template-columns:1fr 1fr;
+
+align-items:center;
+
+max-width:1280px;
+margin:auto;
+
+padding:48px 64px;
+
+gap:40px;
+}
+
+/* left */
+
+.left{
+display:flex;
+flex-direction:column;
+gap:32px;
+
+animation:fadeUp .7s ease both;
+}
+
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(28px)}
+to{opacity:1;transform:translateY(0)}
+}
+
+/* badge */
+
+.badge{
+display:inline-flex;
+align-items:center;
+gap:7px;
+
+background:white;
+border:1px solid rgba(14,165,233,.18);
+
+border-radius:999px;
+
+padding:7px 16px;
+
+font-size:13px;
+font-weight:500;
+
+width:fit-content;
+}
+
+/* headline */
+
+.headline{
+font-family:'Sora',sans-serif;
+font-size:clamp(38px,4.5vw,58px);
+font-weight:800;
+line-height:1.1;
+letter-spacing:-0.02em;
+}
+
+.gradient-line{
+display:block;
+background:linear-gradient(90deg,#0ea5e9,#38bdf8);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+/* subtext */
+
+.subtext{
+font-size:16.5px;
+line-height:1.65;
+color:var(--text-mid);
+max-width:440px;
+}
+
+.subtext span{
+display:block;
+margin-bottom:6px;
+}
+
+.subtext span:last-child{
+margin-bottom:0;
+}
+
+/* stats */
+
+.stats{
+display:flex;
+gap:36px;
+}
+
+.stat{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.stat-icon{
+width:42px;
+height:42px;
+border-radius:50%;
+background:#e0f0fa;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.stat-text strong{
+font-family:'Sora';
+font-size:20px;
+display:block;
+}
+
+.stat-text span{
+font-size:13px;
+color:var(--text-light);
+}
+
+/* form */
+
+.form-wrap{
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.email-input{
+width:100%;
+padding:16px;
+border-radius:12px;
+border:1.5px solid rgba(14,165,233,.2);
+background:var(--input-bg);
+font-family:'DM Sans';
+font-size:15px;
+outline:none;
+}
+
+.email-input:focus{
+border-color:var(--accent);
+box-shadow:0 0 0 3px rgba(14,165,233,.12);
+}
+
+/* button */
+
+.submit-btn{
+width:100%;
+padding:17px;
+background:var(--btn-bg);
+color:var(--btn-text);
+font-family:'Sora';
+font-weight:600;
+font-size:15px;
+border:none;
+border-radius:12px;
+cursor:pointer;
+transition:.2s;
+}
+
+.submit-btn:hover{
+transform:translateY(-1px);
+box-shadow:0 6px 24px rgba(13,17,23,.22);
+}
+
+.submit-btn:disabled{
+opacity:0.6;
+cursor:not-allowed;
+transform:none;
+}
+
+/* toast */
+
+.toast{
+display:none;
+padding:10px 16px;
+border-radius:10px;
+font-size:13px;
+}
+
+.toast.success{
+display:flex;
+background:rgba(16,185,129,.12);
+color:#065f46;
+}
+
+.toast.error{
+display:flex;
+background:rgba(239,68,68,.1);
+color:#991b1b;
+}
+
+/* footer */
+
+.footer-line{
+font-size:13.5px;
+color:var(--text-light);
+}
+
+/* phone */
+
+.right{
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.phone-wrap{
+max-width:340px;
+animation:float 5s ease-in-out infinite;
+filter:drop-shadow(0 32px 64px rgba(13,17,23,.18));
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-12px)}
+}
+
+.phone-wrap img{
+width:100%;
+border-radius:42px;
+}
+
+/* mobile */
+
+@media(max-width:900px){
+
+.page{
+grid-template-columns:1fr;
+padding:36px 24px;
+text-align:center;
+}
+
+.right{
+margin-top:40px;
+}
+
+.phone-wrap{
+max-width:240px;
+}
+
+.stats{
+justify-content:center;
+}
+
+.subtext,
+.badge,
+.footer-line{
+margin:auto;
+}
+
+}
+
+</style>
 </head>
 
-<header class="navbar">
-  <div class="logo">
-    <a href="#hero">
-      <img src="OceanaryFinalLogo1.png" alt="Oceanary Logo">
-    </a>
-  </div>
+<body>
 
-  <!-- Hamburger button -->
-  <button class="hamburger" aria-label="Menu">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
+<main class="page">
 
-  <nav>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#featured-articles">Explore</a></li>
-      <li><a href="#store">Store</a></li>
-      <li><a href="about.html">About</a></li>
-    </ul>
-  </nav>
-</header>
+  <section class="left">
 
-
-<section id="hero" class="hero" >
-    <div class="hero-content">
-       <div class="hero-logo">
-            <img src="OceanaryFinalLogo1.png" alt="Oceanary Logo">
-       </div>
-
-      <p>See The Ocean Differently</p>
-      <!-- <button id="involvedBtn" class="btn involved">Coming Soon</button> -->
+    <div class="badge">
+      ✨ Early Access
     </div>
-</section>
 
+    <h1 class="headline">
+      Find Your
+      <span class="gradient-line">Ocean of Calm</span>
+    </h1>
 
-  
-<section class="oceanary-news">
-
-
-
-  <!-- Featured Articles -->
-  <div id="featured-articles" class="featured-articles">
-  <!-- Breaking News Banner -->
-  <div class="breaking-banner">
-    Explore The Latest Ocean Stories:
-  </div>
-    <!-- Article 1 -->
-    <a href="article1.html?id=1" class="article-card">
-      <img src="reef.jpg" alt="VR headset" class="article-image">
-      <div class="article-content">
-        <div class="article-meta">
-          <span class="category">Economics</span> • Feb 2026 • 8 Min read
-        </div>
-        <h3 class="article-title">Why Coral Reefs Matter Economically, Not Just Environmentally</h3>
-      </div>
-    </a>
-
-    <!-- Article 2 -->
-    <a href="article1.html?id=2" class="article-card">
-      <img src="turtle.png" alt="Fine dining table" class="article-image">
-      <div class="article-content">
-        <div class="article-meta">
-          <span class="category">Environment</span> • Feb 2026 • 4 Min read
-        </div>
-        <h3 class="article-title">How Marine Protected Areas Actually Work</h3>
-      </div>
-    </a>
-
- <!-- Article 3 (Wide Health Article) -->
- <a href="article1.html?id=3" class="article-card wide">
-  <img src="shark.png" alt="Health supplements" class="article-image">
-  <div class="article-content">
-    <div class="article-meta">
-      <span class="category">Environment</span> • Feb 2026 • 5 Min read
-    </div>
-    <h3 class="article-title">Who Owns The Ocean? A Legal And Regulatory Overview</h3>
-    <p class="article-description">
-      Who decides which areas belong to who and the rules that govern them...
+    <p class="subtext">
+      <span>Oceanary — Meditation & Mindfulness inspired by the rhythm of the sea.</span>
+      <span>Journey through guided meditations, breathing exercises and mindful experiences with your AI Companion.</span>
+      <span>Build virtual reefs as you grow calmer with every Journey.</span>
     </p>
-  </div>
-</a>
 
-
-</div>
-
-<div class="news-sidebar">
-  <section class="impact-tracker">
-    <h3>Overview</h3>
-
-    <div class="impact-body">
-      <div class="impact-stat">
-        <span class="impact-value">25,000 +</span>
-        <span class="impact-label">Impressions</span>
-      </div>
-
-      <!-- <div class="impact-stat">
-        <span class="impact-value">Follow Us (X)</span>
-        <span class="impact-label">@OceanaryMedia</span>
-      </div> -->
-
-      <div class="impact-stat">
-        <span class="impact-value">3</span>
-        <span class="impact-label">Articles Published</span>
-      </div>
-    </div>
-  </section>
-  <div class="species-spotlight">
-  <h3>Species Spotlight</h3>
-
-  <div class="species-card">
-    <img src="turtle2.jpg" class="species-image">
-
-    <div class="species-overlay">
-      <div class="species-meta">Featured Species</div>
-      <div class="species-name">Hawksbill Sea Turtle</div>
-      <div class="species-status">Critically Endangered</div>
-      <div class="species-blurb">
-        Essential to coral reef health, Hawksbills maintain balance in fragile marine ecosystems.
-      </div>
-    </div>
-  </div>
-
-  <section class="ocean-fact-card">
-    <h3>Did you know?</h3>
-
-    <div class="fact-body">
-      <p class="fact-text">
-        The ocean absorbs more heat every day than all the energy humans use in a year.
-      </p>
-    </div>
-  </section>
-</section>
-
-</div>
-</div>
-</div>
-</section>
-
-
-
-
-
-<!-- Quick read -->
-<section class="quick-read section">
-  <div class="quick-read__eyebrow">
-    <span class="quickeyebrow-line"></span>
-    <span class="quickeyebrow-text">Related Articles</span>
-    <span class="quickeyebrow-line"></span>
-  </div>
-  <div class="container">
-
-    <div class="quick-read-swiper">
-
-      <button class="swiper-btn prev">‹</button>
-
-      <div class="swiper-viewport">
-        <div class="swiper-track">
-
-          <a href="article1.html?id=1" class="article">
-            <img src="reef.jpg" alt="" class="quick-image">
-            <div class="article-data-container">
-              <div class="article-data">
-                <span>• Feb 2026 •</span>
-                <span class="article-data-spacer"></span>
-                <span>8 Min read</span>
-              </div>
-              <h3 class="title article-title">Why Coral Reefs Matter Economically, Not Just Environmentally</h3>
-            </div>
-          </a>
-
-          <a href="article1.html?id=2" class="article">
-            <img src="turtle.png" alt="" class="quick-image">
-            <div class="article-data-container">
-              <div class="article-data">
-                <span>• Feb 2026 •</span>
-                <span class="article-data-spacer"></span>
-                <span>4 Min read</span>
-              </div>
-              <h3 class="title article-title">How Marine Protected Areas Actually Work</h3>
-            </div>
-          </a>
-
-          <a href="article1.html?id=3" class="article">
-            <img src="shark.png" alt="" class="quick-image">
-            <div class="article-data-container">
-              <div class="article-data">
-                <span>• Feb 2026 •</span>
-                <span class="article-data-spacer"></span>
-                <span>5 Min read</span>
-              </div>
-              <h3 class="title article-title">Who Owns The Ocean? A Legal And Regulatory Overview</h3>
-            </div>
-          </a>
-
-          <!-- <a href="article1.html?id=9" class="article">
-            <img src="coral test.jpg" alt="" class="quick-image">
-            <div class="article-data-container">
-              <div class="article-data">
-                <span>• Feb 2026 •</span>
-                <span class="article-data-spacer"></span>
-                <span>3 Min read</span>
-              </div>
-              <h3 class="title article-title">Oceanary Launch Campaign</h3>
-            </div>
-          </a> -->
-
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-icon">📈</div>
+        <div class="stat-text">
+          <strong>35,000+</strong>
+          <span>People Reached</span>
         </div>
       </div>
-
-      <button class="swiper-btn next">›</button>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- Store Section -->
-
-<section id="store" class="section2 about">
-
-  <span class="coming-soon-badge fade-up">COMING SOON</span>
-
-  <h2 class="section2-different fade-up">Oceanary Store</h2>
-
-  <h3 class="section2-h3 fade-up">
-    Purpose-driven products. Real ocean impact.
-  </h3>
-
-  <p class="section-aboutintro fade-up">
-    We’re preparing a collection of Oceanary and partner-made products designed to fund real ocean projects. 
-    From sustainable merch to purpose-driven gear, every item will help protect our oceans.
-  </p>
-
-  <a href="about.html#waitlist" class="waitlist-btn fade-up">Join the Waitlist</a>
-
-</section>
-
-
-
-
-
-<!-- About section -->
-<section id= "who-we-are" class="about-teaser">
-<div class="about-teaser__eyebrow">
-  <span class="eyebrow-line"></span>
-  <span class="eyebrow-text">Who We Are</span>
-  <span class="eyebrow-line"></span>
-</div>
-
-  <div class="about-teaser__content">
-    <div class="about-teaser__logo">
-      <img src="badge logo.PNG" alt="Oceanary Badge" />
-    </div>
-
-    <div class="about-teaser__text">
-      <p>
-        Oceanary is a story‑driven ocean brand exploring the people, ideas, and ventures shaping our blue planet.
-        We publish cinematic, editorial‑led coverage that brings the ocean’s future into focus.
-      </p>
-       <a href="about.html" class="waitlist-btn fade-up">Read our full story →</a>
-      <!-- <button id="involvedBtn" class="btn involved">Read our full story →</button> -->
-
-      <div class="about-teaser__pillars">
-        <span class="about-teaser__pillars-label">We cover:</span>
-        <span class="about-teaser__pillars-item">Ocean stories</span>
-        <span class="about-teaser__pillars-separator">•</span>
-        <span class="about-teaser__pillars-item">Environmental innovation</span>
-        <span class="about-teaser__pillars-separator">•</span>
-        <span class="about-teaser__pillars-item">Blue‑tech ventures</span>
-        <span class="about-teaser__pillars-separator">•</span>
-        <span class="about-teaser__pillars-item">Culture &amp; exploration</span>
+      <div class="stat">
+        <div class="stat-icon">⭐</div>
+        <div class="stat-text">
+          <strong>5.0</strong>
+          <span>Initial Rating</span>
+        </div>
       </div>
     </div>
-  </div>
-</section>
 
+    <div class="form-wrap">
 
-<!-- Footer  -->
-<footer class="site-footer">
-  <div class="site-footer__inner">
+      <input id="emailInput"
+        class="email-input"
+        type="email"
+        placeholder="Enter your email">
 
-    <div class="footer-col footer-brand">
-      <!-- <img src="OceanaryFinalLogo1.png" alt="Oceanary Badge" class="footer-logo" /> -->
-      <div class="footer-legal">
-        <a href="./Legal/privacypolicy.html">Privacy Policy</a>
-        <a href="./Legal/terms.html">Terms of Service</a>
-        <a href="./Legal/cookies.html">Cookie Policy</a>
-        <a href="./Legal/returns.html">Returns & Refunds</a>
-        <a href="./Legal/shipping.html">Shipping Policy</a>
-        <a href="./Legal/payments.html">Payment & Security</a>
-       </div>
+      <button class="submit-btn" id="submitBtn" onclick="handleSubmit()">
+        Get Early Access
+      </button>
 
-      
-      <!-- <p class="footer-tagline">Cinematic stories from the ocean.</p> -->
+      <div class="toast" id="toast"></div>
+
+      <p class="footer-line">
+        Grow your calm. Restore the ocean.
+      </p>
+
     </div>
 
-    <div class="footer-col footer-links">
-      <h4>Explore</h4>
-      <a href="index.html#featured-articles">Latest Stories</a>
-      <a href="about.html">About</a>
-      <a href="index.html#store">Store</a>
-       
+  </section>
+
+  <section class="right">
+    <div class="phone-wrap">
+      <img src="iphonepagedone.png" alt="Oceanary App">
     </div>
+  </section>
 
-    <div class="footer-col footer-meta">
-      <h4>Connect</h4>
-      
-      <a href="https://instagram.com/oceanaryofficial" target="_blank">Instagram</a>
-      <a href="https://twitter.com/oceanarymedia" target="_blank">Twitter</a>
-      <a href="mailto:contact@oceanary.org">Email Us</a>
-      <p class="footer-copy"> 2026 Oceanary </p>
-    </div>
-
-  </div>
-</footer>
-
+</main>
 
 <script>
-  const swiper = new Swiper(".quick-read-swiper", {
-    slidesPerView: 1.2,
-    spaceBetween: 20,
-    loop: true,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    breakpoints: {
-      640: {
-        slidesPerView: 2.2,
-      },
-      1024: {
-        slidesPerView: 3,
-      },
-    },
-  });
-</script>
+  (function () {
+    emailjs.init("gn8D9_03OHxjEYH4t");
+  })();
 
-<script>
-  const navbar = document.querySelector(".navbar");
+  async function handleSubmit() {
+    const emailInput = document.getElementById("emailInput");
+    const email = emailInput.value.trim();
+    const toast = document.getElementById("toast");
+    const btn = document.getElementById("submitBtn");
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 80) {
-      if (!navbar.classList.contains("sticky")) {
-        navbar.classList.add("sticky");
-        document.body.classList.add("navbar-active");
+    // Reset toast
+    toast.className = "toast";
+    toast.textContent = "";
 
-        // trigger animation frame
-        requestAnimationFrame(() => {
-          navbar.classList.add("show");
-        });
-      }
-    } else {
-      navbar.classList.remove("show");
-      navbar.classList.remove("sticky");
-      document.body.classList.remove("navbar-active");
+    // Validate
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      toast.className = "toast error";
+      toast.textContent = "Please enter a valid email";
+      return;
     }
-  });
-</script>
-<script>
-const track = document.querySelector(".swiper-track");
-const slides = document.querySelectorAll(".article");
-const nextBtn = document.querySelector(".swiper-btn.next");
-const prevBtn = document.querySelector(".swiper-btn.prev");
 
-let index = 0;
-const totalSlides = slides.length;
+    // Loading state
+    btn.disabled = true;
+    btn.textContent = "Sending...";
 
-function getSlidesToShow() {
-  const width = window.innerWidth;
-
-  if (width <= 600) return 1;     // mobile portrait
-  if (width <= 900) return 2;     // tablet / phone landscape
-  return 3;                       // desktop
-}
-
-function updateSwiper() {
-  const slideWidth = slides[0].offsetWidth;
-  track.style.transform = `translateX(-${index * slideWidth}px)`;
-}
-
-nextBtn.addEventListener("click", () => {
-  const slidesToShow = getSlidesToShow();
-  const maxIndex = totalSlides - slidesToShow;
-
-  if (index >= maxIndex) {
-    index = 0;                  // wrap to start
-  } else {
-    index++;
+    emailjs.send(
+      "service_kosntqr",
+      "template_tnhjmiq",
+      {
+        from_email: email,
+        from_name: "",
+        message: "App waitlist signup"
+      }
+    ).then(() => {
+      toast.className = "toast success";
+      toast.textContent = "You're on the list! 🌊";
+      emailInput.value = "";
+    }).catch((err) => {
+      console.error(err);
+      toast.className = "toast error";
+      toast.textContent = "Something went wrong. Try again.";
+    }).finally(() => {
+      btn.disabled = false;
+      btn.textContent = "Get Early Access";
+    });
   }
-
-  updateSwiper();
-});
-
-prevBtn.addEventListener("click", () => {
-  const slidesToShow = getSlidesToShow();
-  const maxIndex = totalSlides - slidesToShow;
-
-  if (index <= 0) {
-    index = maxIndex;           // wrap to end
-  } else {
-    index--;
-  }
-
-  updateSwiper();
-});
-
-window.addEventListener("resize", () => {
-  const slidesToShow = getSlidesToShow();
-  const maxIndex = totalSlides - slidesToShow;
-
-  // Prevent overflow when resizing smaller
-  if (index > maxIndex) index = maxIndex;
-
-  updateSwiper();
-});
-
 </script>
 
-<script>
-  const hamburger = document.querySelector('.hamburger');
-  const nav = document.querySelector('.navbar nav');
-
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    nav.classList.toggle('open');
-  });
-
-</script>
-
-
+</body>
 </html>
